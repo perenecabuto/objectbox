@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%=h @simpletext.title %>
+</p>
+
+<p>
+  <b>Autor:</b>
+  <%=h @simpletext.autor %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @simpletext.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_simpletext_path(@simpletext) %> |
+<%= link_to 'Back', simpletexts_path %>

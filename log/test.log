@@ -1,0 +1,467 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "simpletexts" [0m
+
+
+Processing SimpletextsController#create (for 0.0.0.0 at 2010-06-16 21:22:24) [POST]
+  Parameters: {"simpletext"=>{}}
+  [4;35;1mSimpletext Create (0.3ms)[0m   [0mINSERT INTO "simpletexts" ("autor_id", "created_at", "title", "updated_at", "content") VALUES(NULL, '2010-06-17 00:22:24', NULL, '2010-06-17 00:22:24', NULL)[0m
+Redirected to http://test.host/simpletexts/980190963
+Completed in 10ms (DB: 2) | 302 Found [http://test.host/simpletexts?]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "simpletexts" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "simpletexts" [0m
+  [4;36;1mSimpletext Load (0.2ms)[0m   [0;1mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+
+
+Processing SimpletextsController#destroy (for 0.0.0.0 at 2010-06-16 21:22:24) [DELETE]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mSimpletext Load (0.3ms)[0m   [0mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+  [4;36;1mSimpletext Destroy (0.3ms)[0m   [0;1mDELETE FROM "simpletexts" WHERE "id" = 980190962[0m
+Redirected to http://test.host/simpletexts
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/simpletexts/980190962]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "simpletexts" [0m
+  [4;36;1mSimpletext Load (0.3ms)[0m   [0;1mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+
+
+Processing SimpletextsController#edit (for 0.0.0.0 at 2010-06-16 21:22:24) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mSimpletext Load (0.3ms)[0m   [0mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+Rendering template within layouts/simpletexts
+Rendering simpletexts/edit
+Completed in 23ms (View: 21, DB: 1) | 200 OK [http://test.host/simpletexts/980190962/edit]
+
+
+Processing SimpletextsController#index (for 0.0.0.0 at 2010-06-16 21:22:24) [GET]
+  [4;36;1mSimpletext Load (0.4ms)[0m   [0;1mSELECT * FROM "simpletexts" [0m
+Rendering template within layouts/simpletexts
+Rendering simpletexts/index
+Completed in 13ms (View: 12, DB: 0) | 200 OK [http://test.host/simpletexts]
+
+
+Processing SimpletextsController#new (for 0.0.0.0 at 2010-06-16 21:22:24) [GET]
+Rendering template within layouts/simpletexts
+Rendering simpletexts/new
+Completed in 7ms (View: 7, DB: 0) | 200 OK [http://test.host/simpletexts/new]
+  [4;35;1mSimpletext Load (0.3ms)[0m   [0mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+
+
+Processing SimpletextsController#show (for 0.0.0.0 at 2010-06-16 21:22:24) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mSimpletext Load (0.3ms)[0m   [0;1mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+Rendering template within layouts/simpletexts
+Rendering simpletexts/show
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://test.host/simpletexts/980190962]
+  [4;35;1mSimpletext Load (0.3ms)[0m   [0mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+
+
+Processing SimpletextsController#update (for 0.0.0.0 at 2010-06-16 21:22:24) [PUT]
+  Parameters: {"simpletext"=>{}, "id"=>"980190962"}
+  [4;36;1mSimpletext Load (0.3ms)[0m   [0;1mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+Redirected to http://test.host/simpletexts/980190962
+Completed in 4ms (DB: 1) | 302 Found [http://test.host/simpletexts/980190962?]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "simpletexts" [0m
+
+
+Processing SimpletextsController#create (for 0.0.0.0 at 2010-06-16 21:23:12) [POST]
+  Parameters: {"simpletext"=>{}}
+  [4;35;1mSimpletext Create (0.3ms)[0m   [0mINSERT INTO "simpletexts" ("autor_id", "created_at", "title", "updated_at", "content") VALUES(NULL, '2010-06-17 00:23:12', NULL, '2010-06-17 00:23:12', NULL)[0m
+Redirected to http://test.host/simpletexts/980190963
+Completed in 10ms (DB: 2) | 302 Found [http://test.host/simpletexts?]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "simpletexts" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "simpletexts" [0m
+  [4;36;1mSimpletext Load (0.3ms)[0m   [0;1mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+
+
+Processing SimpletextsController#destroy (for 0.0.0.0 at 2010-06-16 21:23:12) [DELETE]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mSimpletext Load (0.3ms)[0m   [0mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+  [4;36;1mSimpletext Destroy (0.3ms)[0m   [0;1mDELETE FROM "simpletexts" WHERE "id" = 980190962[0m
+Redirected to http://test.host/simpletexts
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/simpletexts/980190962]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "simpletexts" [0m
+  [4;36;1mSimpletext Load (0.3ms)[0m   [0;1mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+
+
+Processing SimpletextsController#edit (for 0.0.0.0 at 2010-06-16 21:23:12) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mSimpletext Load (0.3ms)[0m   [0mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+Rendering template within layouts/simpletexts
+Rendering simpletexts/edit
+Completed in 13ms (View: 11, DB: 1) | 200 OK [http://test.host/simpletexts/980190962/edit]
+
+
+Processing SimpletextsController#index (for 0.0.0.0 at 2010-06-16 21:23:13) [GET]
+  [4;36;1mSimpletext Load (0.4ms)[0m   [0;1mSELECT * FROM "simpletexts" [0m
+Rendering template within layouts/simpletexts
+Rendering simpletexts/index
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://test.host/simpletexts]
+
+
+Processing SimpletextsController#new (for 0.0.0.0 at 2010-06-16 21:23:13) [GET]
+Rendering template within layouts/simpletexts
+Rendering simpletexts/new
+Completed in 7ms (View: 7, DB: 0) | 200 OK [http://test.host/simpletexts/new]
+  [4;35;1mSimpletext Load (0.3ms)[0m   [0mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+
+
+Processing SimpletextsController#show (for 0.0.0.0 at 2010-06-16 21:23:13) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mSimpletext Load (0.3ms)[0m   [0;1mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+Rendering template within layouts/simpletexts
+Rendering simpletexts/show
+Completed in 58ms (View: 57, DB: 1) | 200 OK [http://test.host/simpletexts/980190962]
+  [4;35;1mSimpletext Load (0.3ms)[0m   [0mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+
+
+Processing SimpletextsController#update (for 0.0.0.0 at 2010-06-16 21:23:13) [PUT]
+  Parameters: {"simpletext"=>{}, "id"=>"980190962"}
+  [4;36;1mSimpletext Load (0.3ms)[0m   [0;1mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+Redirected to http://test.host/simpletexts/980190962
+Completed in 4ms (DB: 1) | 302 Found [http://test.host/simpletexts/980190962?]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "salt", "created_at", "activated_at", "crypted_password", "remember_token_expires_at", "updated_at", "activation_code", "remember_token", "login", "email") VALUES('', 'e816674020d0612405e6822fb064d6f948a0ac1d', '2010-06-17 01:38:14', NULL, 'cb45af0128d39ab77d0ab5b40a9d07f990e20525', NULL, '2010-06-17 01:38:14', '90cc79d9ff1db062f458a466f7894cea532718a3', NULL, 'quire', 'quire@example.com')[0m
+Sent mail to quire@example.com
+
+Date: Wed, 16 Jun 2010 22:38:14 -0300
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/90cc79d9ff1db062f458a466f7894cea532718a3
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "salt", "created_at", "activated_at", "crypted_password", "remember_token_expires_at", "updated_at", "activation_code", "remember_token", "login", "email") VALUES('', 'ba8298cd7c549f79e3d5dee3ee9d2b21a989cc8f', '2010-06-17 01:38:14', NULL, '0a7848c933b7b724033886d658a119941553a9ef', NULL, '2010-06-17 01:38:14', '2fc3fec02cde43a9bcce67f58abb5eb4c6848281', NULL, 'quire', 'quire@example.com')[0m
+Sent mail to quire@example.com
+
+Date: Wed, 16 Jun 2010 22:38:14 -0300
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/2fc3fec02cde43a9bcce67f58abb5eb4c6848281
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'quentin2' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'quentin@example.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:14', "login" = 'quentin2' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin2' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:14', "remember_token" = '9818f7cbee61bcd117673b6a573e0acff230381e', "remember_token_expires_at" = '2010-07-01 01:38:14' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:14', "remember_token" = '1a8644f6d5c8f7b234b025a095ae2e703b9deae5', "remember_token_expires_at" = '2010-06-24 01:38:14' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:14', "remember_token" = '9cc7122a9bf0978c5329cfbfa0f56cd3958573d0', "remember_token_expires_at" = '2010-06-24 01:38:14' WHERE "id" = 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'quentin' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'quentin@example.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:14', "crypted_password" = '3e7d3955bf20835365991b69430a7209b38449d9' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:14', "remember_token" = '0bd66c121ef6a2021481062335c416436661e1a9', "remember_token_expires_at" = '2010-07-01 01:38:14' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:14', "remember_token" = '9499fb1292e7b9c3cc8f51c5b55394a2185795be', "remember_token_expires_at" = '2010-07-01 01:38:14' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:14', "remember_token" = NULL, "remember_token_expires_at" = NULL WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2010-06-16 22:38:17) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:17', "remember_token" = NULL, "remember_token_expires_at" = NULL WHERE "id" = 1[0m
+Redirected to http://test.host/
+Completed in 75ms (DB: 3) | 302 Found [http://test.host/logout]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:17', "remember_token" = '704573fd5f74dbfe2c3570c8149df2a112b95f3b', "remember_token_expires_at" = '2010-07-01 01:38:17' WHERE "id" = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2010-06-16 22:38:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'invalid_auth_token') LIMIT 1[0m
+Rendering sessions/new
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://test.host/login]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'invalid_auth_token') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:17', "remember_token" = '035dcd31524573a6d9e439142ffb4a73707cf5eb', "remember_token_expires_at" = '2010-07-01 01:38:17' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:17', "remember_token_expires_at" = '2010-06-17 01:33:17' WHERE "id" = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2010-06-16 22:38:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '035dcd31524573a6d9e439142ffb4a73707cf5eb') LIMIT 1[0m
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 2) | 200 OK [http://test.host/login]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '035dcd31524573a6d9e439142ffb4a73707cf5eb') LIMIT 1[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2010-06-16 22:38:17) [POST]
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+Failed login for 'quentin' from 0.0.0.0 at Thu Jun 17 01:38:17 UTC 2010
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://test.host/session?login=quentin&password=bad+password]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2010-06-16 22:38:17) [POST]
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:17', "remember_token" = NULL, "remember_token_expires_at" = NULL WHERE "id" = 1[0m
+Redirected to http://test.host/
+Completed in 6ms (DB: 1) | 302 Found [http://test.host/session?login=quentin&password=monkey]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:17', "remember_token" = '98c1e5e59edd4ff0d4efd20e624a50f6c7fdd92d', "remember_token_expires_at" = '2010-07-01 01:38:17' WHERE "id" = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2010-06-16 22:38:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '98c1e5e59edd4ff0d4efd20e624a50f6c7fdd92d') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:17', "remember_token" = NULL, "remember_token_expires_at" = NULL WHERE "id" = 1[0m
+Rendering sessions/new
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://test.host/login]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2010-06-16 22:38:17) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:17', "remember_token" = NULL, "remember_token_expires_at" = NULL WHERE "id" = 1[0m
+Redirected to http://test.host/
+Completed in 5ms (DB: 1) | 302 Found [http://test.host/logout]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2010-06-16 22:38:17) [POST]
+  Parameters: {"remember_me"=>"0", "action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:17', "remember_token" = NULL, "remember_token_expires_at" = NULL WHERE "id" = 1[0m
+Redirected to http://test.host/
+Completed in 6ms (DB: 1) | 302 Found [http://test.host/session?login=quentin&password=monkey&remember_me=0]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2010-06-16 22:38:17) [POST]
+  Parameters: {"remember_me"=>"1", "action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:17', "remember_token" = '736030118caa89c5d84cec01aec49fae976843d8', "remember_token_expires_at" = '2010-07-01 01:38:17' WHERE "id" = 1[0m
+Redirected to http://test.host/
+Completed in 7ms (DB: 1) | 302 Found [http://test.host/session?login=quentin&password=monkey&remember_me=1]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "simpletexts" [0m
+
+
+Processing SimpletextsController#create (for 0.0.0.0 at 2010-06-16 22:38:17) [POST]
+  Parameters: {"simpletext"=>{}, "action"=>"create", "controller"=>"simpletexts"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/simpletexts?]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "simpletexts" [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "simpletexts" [0m
+  [4;35;1mSimpletext Load (0.3ms)[0m   [0mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+
+
+Processing SimpletextsController#destroy (for 0.0.0.0 at 2010-06-16 22:38:17) [DELETE]
+  Parameters: {"action"=>"destroy", "id"=>"980190962", "controller"=>"simpletexts"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 1) | 302 Found [http://test.host/simpletexts/980190962]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "simpletexts" [0m
+  [4;35;1mSimpletext Load (0.4ms)[0m   [0mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+
+
+Processing SimpletextsController#edit (for 0.0.0.0 at 2010-06-16 22:38:17) [GET]
+  Parameters: {"action"=>"edit", "id"=>"980190962", "controller"=>"simpletexts"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 1) | 302 Found [http://test.host/simpletexts/980190962/edit]
+
+
+Processing SimpletextsController#index (for 0.0.0.0 at 2010-06-16 22:38:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"simpletexts"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/simpletexts]
+
+
+Processing SimpletextsController#new (for 0.0.0.0 at 2010-06-16 22:38:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"simpletexts"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/simpletexts/new]
+  [4;36;1mSimpletext Load (0.4ms)[0m   [0;1mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+
+
+Processing SimpletextsController#show (for 0.0.0.0 at 2010-06-16 22:38:17) [GET]
+  Parameters: {"action"=>"show", "id"=>"980190962", "controller"=>"simpletexts"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/simpletexts/980190962]
+  [4;35;1mSimpletext Load (0.3ms)[0m   [0mSELECT * FROM "simpletexts" WHERE ("simpletexts"."id" = 980190962) [0m
+
+
+Processing SimpletextsController#update (for 0.0.0.0 at 2010-06-16 22:38:17) [PUT]
+  Parameters: {"simpletext"=>{}, "action"=>"update", "id"=>"980190962", "controller"=>"simpletexts"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/simpletexts/980190962?]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'aaron' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+
+
+Processing UsersController#activate (for 0.0.0.0 at 2010-06-16 22:38:17) [GET]
+  Parameters: {"activation_code"=>"1b6453892473a467d07372d45eb05abc2031647a", "action"=>"activate", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."activation_code" = '1b6453892473a467d07372d45eb05abc2031647a') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-06-17 01:38:17', "activated_at" = '2010-06-17 01:38:17', "activation_code" = NULL WHERE "id" = 2[0m
+Sent mail to aaron@example.com
+
+Date: Wed, 16 Jun 2010 22:38:17 -0300
+From: ADMINEMAIL
+To: aaron@example.com
+Subject: [YOURSITE] Your account has been activated!
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+aaron, your account has been activated.  Welcome aboard!
+
+  http://YOURSITE/
+Redirected to http://test.host/login
+Completed in 13ms (DB: 1) | 302 Found [http://test.host/users/activate?activation_code=1b6453892473a467d07372d45eb05abc2031647a]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-06-16 22:38:17) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>"quire@example.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "salt", "created_at", "activated_at", "crypted_password", "remember_token_expires_at", "updated_at", "activation_code", "remember_token", "login", "email") VALUES('', '6f23b2a101f606ab5b05979b8aeef6448ec0087a', '2010-06-17 01:38:17', NULL, '8fdce64fee9d7dd75adf1647a244854eec6c17d2', NULL, '2010-06-17 01:38:17', 'e945955e108d2d1b1f02d39d04674bc6b9c39d0b', NULL, 'quire', 'quire@example.com')[0m
+Sent mail to quire@example.com
+
+Date: Wed, 16 Jun 2010 22:38:17 -0300
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/e945955e108d2d1b1f02d39d04674bc6b9c39d0b
+Redirected to http://test.host/
+Completed in 13ms (DB: 1) | 302 Found [http://test.host/register?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire69&user%5Bpassword_confirmation%5D=quire69]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#activate (for 0.0.0.0 at 2010-06-16 22:38:17) [GET]
+  Parameters: {"activation_code"=>"", "action"=>"activate", "controller"=>"users"}
+Redirected to http://test.host/
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/users/activate?activation_code=]
+
+
+Processing UsersController#activate (for 0.0.0.0 at 2010-06-16 22:38:17) [GET]
+  Parameters: {"action"=>"activate", "controller"=>"users"}
+Redirected to http://test.host/
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/users/activate]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-06-16 22:38:17) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>nil}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'quire') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+Rendering users/new
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://test.host/register?user%5Bemail%5D=&user%5Blogin%5D=quire&user%5Bpassword%5D=quire69&user%5Bpassword_confirmation%5D=quire69]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-06-16 22:38:17) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>nil, "password"=>"[FILTERED]", "email"=>"quire@example.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'quire@example.com') LIMIT 1[0m
+Rendering users/new
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://test.host/register?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=&user%5Bpassword%5D=quire69&user%5Bpassword_confirmation%5D=quire69]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-06-16 22:38:17) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>"quire@example.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'quire') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'quire@example.com') LIMIT 1[0m
+Rendering users/new
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://test.host/register?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire69&user%5Bpassword_confirmation%5D=]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-06-16 22:38:17) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>"quire@example.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'quire') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'quire@example.com') LIMIT 1[0m
+Rendering users/new
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://test.host/register?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=&user%5Bpassword_confirmation%5D=quire69]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-06-16 22:38:17) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>"quire@example.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "salt", "created_at", "activated_at", "crypted_password", "remember_token_expires_at", "updated_at", "activation_code", "remember_token", "login", "email") VALUES('', '79a70930d78414960c4e942253f1682316b72728', '2010-06-17 01:38:17', NULL, '1c3d46571e4d22b2fc5b645c2a5eee118ba1f13e', NULL, '2010-06-17 01:38:17', 'aef95dadee6e99641324587eb07e57b96c3412d2', NULL, 'quire', 'quire@example.com')[0m
+Sent mail to quire@example.com
+
+Date: Wed, 16 Jun 2010 22:38:17 -0300
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/aef95dadee6e99641324587eb07e57b96c3412d2
+Redirected to http://test.host/
+Completed in 12ms (DB: 1) | 302 Found [http://test.host/register?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire69&user%5Bpassword_confirmation%5D=quire69]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m

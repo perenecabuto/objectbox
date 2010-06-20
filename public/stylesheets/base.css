@@ -1,0 +1,128 @@
+body {
+    background-color: #E3E4FA;
+    font-family: Verdana;
+}
+
+h1 {
+    font-family: Verdana;
+    font-size: 18px;
+    color: #777;
+    border-bottom: 1px solid #acc;
+}
+
+#topo {
+    font-family: Arial, Verdana;
+    font-size: 13px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 35px;
+    background-image: url(../images/top-bg.png);
+}
+
+#topo li:first-child {
+    font-size: 16px;
+}
+
+#topo li {
+    display: inline-block;
+    height: auto;
+    margin-top: 10px;
+    color: white;
+}
+
+#topo li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#topo li a:active {
+    color: red;
+}
+
+#page-slice:hover {
+}
+
+#page-slice {
+    background-color: white;
+    width: 200px;
+    height: auto;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border-top: 4px double #ccc;
+    border-bottom: 1px dashed #ccc;
+    overflow:hidden;
+}
+
+#page-slice .toggle {
+    display: block;
+    text-align: center;
+    font-size: 8px;
+    color: #ddd;
+    cursor: pointer;
+}
+
+#page-slice ul {
+    font-family: monospace;
+    list-style-type:none;
+    padding: 5px;
+}
+
+#page-slice input.search {
+    border: none;
+    float:left;
+    width: 90%;
+}
+
+#page-slice .slice-search {
+    border: 1px solid #ddd;
+}
+
+#page-slice input.do-search {
+    border:none;
+    padding-top: 1px;
+    padding-left: 2px;
+}
+
+
+
+#page-slice ul li:hover {
+    background-color: #ddd;
+}
+
+#page-slice ul li {
+    padding: 2px;
+    vertical-align: middle;
+}
+
+#page-slice a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+#page-slice img {
+    border: none;
+    margin-right: 5px;
+}
+
+#slice-door {
+    width: 217px;
+    height: 10px;
+    position: fixed;
+    top: 16px;
+    right: 12px;
+    background-color: black;
+}
+
+#content {
+    font-family: sans;
+    font-size: 20px;
+    margin-top: 60px;
+    margin-left: 30px;
+    width: 80%;
+}
+

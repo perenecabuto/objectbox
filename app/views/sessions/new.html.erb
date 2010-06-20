@@ -1,0 +1,30 @@
+<style>
+    .login-box label, .login-box input {
+        width: 80%;
+        font-size: 40px;
+        border: none;
+    }
+
+    .login-box input[type=submit] {
+        width: 140px;
+        margin-left: 66%;
+        background-color: #ddd;
+    }
+</style>
+
+<h1>Autentique-se</h1>
+
+  <% form_tag session_path do -%>
+  <div class="login-box">
+    <p><%= label_tag 'login' %><br />
+    <%= text_field_tag 'login', @login %></p>
+    
+    <p><%= label_tag 'password', 'Senha' %><br/>
+    <%= password_field_tag 'password', nil %></p>
+  </div>
+
+  <p><%= label_tag 'remember_me', 'Remember me' %>
+  <%= check_box_tag 'remember_me', '1', @remember_me %></p>
+  
+  <p class="login-box"><%= submit_tag 'Entrar' %></p>
+<% end -%>

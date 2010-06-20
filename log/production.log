@@ -1,0 +1,161 @@
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-17 00:18:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 22ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-17 00:18:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 19ms (View: 13, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-17 00:19:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 21ms (View: 16, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-17 00:19:29) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"P6rv7EFWuhgrepUWfZgTy/NhaqzoxiO1q8hH23rl750=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"perenecabuto", "email"=>"perenecabuto@gmail.com"}}
+Sent mail to perenecabuto@gmail.com
+
+Errno::ECONNREFUSED (Connection refused - connect(2)):
+  /usr/lib/ruby/1.8/net/smtp.rb:551:in `initialize'
+  /usr/lib/ruby/1.8/net/smtp.rb:551:in `open'
+  /usr/lib/ruby/1.8/net/smtp.rb:551:in `do_start'
+  /usr/lib/ruby/1.8/timeout.rb:62:in `timeout'
+  /usr/lib/ruby/1.8/timeout.rb:93:in `timeout'
+  /usr/lib/ruby/1.8/net/smtp.rb:551:in `do_start'
+  /usr/lib/ruby/1.8/net/smtp.rb:525:in `start'
+  app/models/user_observer.rb:3:in `after_create'
+  /usr/lib/ruby/1.8/observer.rb:185:in `notify_observers'
+  /usr/lib/ruby/1.8/observer.rb:184:in `each'
+  /usr/lib/ruby/1.8/observer.rb:184:in `notify_observers'
+  app/controllers/users_controller.rb:13:in `create'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-17 00:21:21) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"P6rv7EFWuhgrepUWfZgTy/NhaqzoxiO1q8hH23rl750=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"perenecabuto", "email"=>"perenecabuto@gmail.com"}}
+Sent mail to perenecabuto@gmail.com
+Redirected to http://localhost:3000/
+Completed in 169ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-17 00:21:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-17 00:21:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 19ms (View: 15, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-17 00:21:32) [POST]
+  Parameters: {"commit"=>"Entrar", "action"=>"create", "authenticity_token"=>"P6rv7EFWuhgrepUWfZgTy/NhaqzoxiO1q8hH23rl750=", "controller"=>"sessions", "login"=>"perenecabuto", "password"=>"[FILTERED]"}
+Failed login for 'perenecabuto' from 127.0.0.1 at Thu Jun 17 03:21:32 UTC 2010
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-17 00:22:15) [POST]
+  Parameters: {"commit"=>"Entrar", "action"=>"create", "authenticity_token"=>"P6rv7EFWuhgrepUWfZgTy/NhaqzoxiO1q8hH23rl750=", "controller"=>"sessions", "login"=>"perenecabuto", "password"=>"[FILTERED]"}
+Failed login for 'perenecabuto' from 127.0.0.1 at Thu Jun 17 03:22:15 UTC 2010
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/session]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-17 00:22:29) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"P6rv7EFWuhgrepUWfZgTy/NhaqzoxiO1q8hH23rl750=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"perenecabuto", "email"=>"perenecabuto@gmail.com"}}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 26ms (View: 20, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-17 00:22:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-17 00:22:32) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 9ms (View: 9, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-17 00:22:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/object_collection]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-17 00:22:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-17 00:23:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 28ms (View: 23, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-17 00:23:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-17 00:23:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-17 00:23:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-17 00:23:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-17 00:23:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-17 00:23:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-17 00:23:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-17 00:23:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://localhost/]

@@ -1,0 +1,2 @@
+module ObjectCollectionHelper
+end
