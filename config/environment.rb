@@ -16,7 +16,6 @@ Rails::Initializer.run do |config|
 
   # Specify gems that this application depends on and have them installed with rake gems:install
   config.gem "sqlite3-ruby", :lib => "sqlite3"
-  config.gem "declarative_authorization"
   config.gem "ferret"
 
 

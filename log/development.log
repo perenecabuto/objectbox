@@ -18507,3 +18507,11 @@ Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-20 12:27:4
 Rendering template within layouts/application
 Rendering object_collection/index
 Completed in 29ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-20 19:46:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering object_collection/index
+Completed in 30ms (View: 11, DB: 0) | 200 OK [http://localhost/]
