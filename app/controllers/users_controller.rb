@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
-  # Be sure to include AuthenticationSystem in Application Controller instead
-  include AuthenticatedSystem
+  skip_filter :login_required, :only => [:new, :create, :activate]
 
-  # render new.rhtml
+  def index
+  end
+
   def new
     @user = User.new
   end
- 
+
   def create
     logout_keeping_session!
     @user = User.new(params[:user])

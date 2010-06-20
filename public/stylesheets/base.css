@@ -10,6 +10,42 @@ h1 {
     border-bottom: 1px solid #acc;
 }
 
+a img {
+    border: none;
+}
+
+
+input, textarea {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table tr {
+    border: 1px solid black;
+    border-bottom: none;
+}
+
+table tr th {
+}
+
+table tr td {
+    padding: 10px;
+    background-color: white;
+}
+
+table tr:hover td {
+    background-color: #ffe;
+}
+
+table a {
+    color: black;
+    font-weight: bold;
+}
+
+
 #topo {
     font-family: Arial, Verdana;
     font-size: 13px;
@@ -40,9 +76,6 @@ h1 {
 
 #topo li a:active {
     color: red;
-}
-
-#page-slice:hover {
 }
 
 #page-slice {

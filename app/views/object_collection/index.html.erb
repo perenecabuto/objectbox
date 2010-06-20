@@ -1,5 +1,5 @@
 <h1>Object Types</h1>
 
 <% for model in @models %>
-    <%= link_to model, model.new %>
+  <%= link_to model.respond_to?(:icon) ? image_tag(model_icon(model)): model, model.new, :title => model %>
 <% end %>

@@ -1,11 +1,15 @@
 class Simpletext < ActiveRecord::Base
+
   belongs_to :autor
 
   before_create :set_autor
 
-
   def to_s
     self.title
+  end
+
+  def self.icon
+    "pencil_64.png"
   end
 
   protected

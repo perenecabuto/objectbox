@@ -1,4 +1,4 @@
-<h1>Editing simpletext</h1>
+<%= render :partial => 'shared/title' %>
 
 <% form_for(@simpletext) do |f| %>
   <%= f.error_messages %>
@@ -9,7 +9,7 @@
   </p>
   <p>
     <%= f.label :autor %><br />
-    <%= f.text_field :autor %>
+    <%= f.text_field :autor, :disabled => true %>
   </p>
   <p>
     <%= f.label :content %><br />

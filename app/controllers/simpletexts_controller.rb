@@ -1,8 +1,5 @@
 class SimpletextsController < ApplicationController
-  before_filter :login_required
   before_filter :load_simpletext, :only => [:show, :edit, :destroy, :update]
-  before_filter :breadcrumbs
-
 
   # GET /simpletexts
   # GET /simpletexts.xml
@@ -85,11 +82,5 @@ class SimpletextsController < ApplicationController
   private
   def load_simpletext
     @simpletext = Simpletext.find(params[:id])
-  end
-
-  def breadcrumbs
-    add_crumb :label => controller_name, :controller => :simpletexts
-    add_crumb :label => action_name, :controller => :simpletexts if action_name != 'index'
-    add_crumb @simpletext if @simpletext and not @simpletext.new_record?
   end
 end

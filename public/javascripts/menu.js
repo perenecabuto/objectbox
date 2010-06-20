@@ -23,36 +23,45 @@ var ActionMenu = new Class({
         this.setOptions({menu_element: menu_element });
 
         this.makeHiddable();
-        this.toggle();
-        this.toggle.delay(5000, this);
+        this.show();
+        this.hide.delay(5000, this);
     },
     makeHiddable: function() {
         var menu_element = this.options.menu_element;
         var _this = this;
 
-        menu_element.set('morph', {duration: 'long', transition: 'elastic:out'});
-        menu_element.store('original-size', menu_element.getStyle('height') );
-        menu_element.store('hidden', true);
-        menu_element.setStyle('height', 8);
-
-        menu_element.addEvent('click', function(e) {
+        menu_element
+        .set('morph', {duration: 'long', transition: 'elastic:out'})
+        .store('original-size', menu_element.getStyle('height') )
+        .store('hidden', true)
+        .setStyle('height', 8)
+        .addEvent('mouseover', function() { _this.show() })
+        .addEvent('mouseout', function() { _this.hide() })
+        .addEvent('click', function(e) {
             if (e && !(e.target == this || this.getElement('.toggle') == e.target)) return;
-            if ( this.retrieve('hidden') ) {
-                this.morph({height: this.retrieve('original-size') });
-                this.store('hidden', false);
-            } else {
-                this.morph({height: 8});
-                this.store('hidden', true);
-            }
+            _this.toggle();
         });
     },
+    isHidden: function() {
+        return this.options.menu_element.retrieve('hidden');
+    },
     toggle: function() {
-        this.options.menu_element.fireEvent('click');
+        if ( this.isHidden() ) this.show();
+        else this.hide();
+    },
+    show: function() {
+        if (!this.isHidden()) return;
+        this.options.menu_element.morph({height: this.options.menu_element.retrieve('original-size') });
+        this.options.menu_element.store('hidden', false);
+    },
+    hide: function() {
+        if (this.isHidden()) return;
+        this.options.menu_element.morph({height: 8});
+        this.options.menu_element.store('hidden', true);
     }
 });
 
 window.addEvent('domready', function() {
     var menu = new Menu('topo');
     var menu = new ActionMenu('page-slice');
-    $$('a').addEvent('click', function() { document.location = 'index.html' });
 });

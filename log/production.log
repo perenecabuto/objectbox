@@ -159,3 +159,147 @@ Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
 Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-17 00:23:24) [GET]
   Parameters: {"action"=>"index", "controller"=>"object_collection"}
 Completed in 2ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-20 04:21:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Rendering template within layouts/application
+Rendering object_collection/index
+Completed in 80ms (View: 15, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-20 04:21:31) [GET]
+  Parameters: {"1277017601"=>nil}
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-20 04:21:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Rendering template within layouts/application
+Rendering object_collection/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-20 04:21:32) [GET]
+  Parameters: {"1277017601"=>nil}
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-20 04:21:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Rendering template within layouts/application
+Rendering object_collection/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-20 04:21:33) [GET]
+  Parameters: {"1277017601"=>nil}
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SimpletextsController#index (for 127.0.0.1 at 2010-06-20 04:21:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"simpletexts"}
+Rendering template within layouts/application
+Rendering simpletexts/index
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/simpletexts]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-20 04:21:35) [GET]
+  Parameters: {"1277017601"=>nil}
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-20 04:21:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Rendering template within layouts/application
+Rendering object_collection/index
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-20 04:21:36) [GET]
+  Parameters: {"1277017601"=>nil}
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-20 04:21:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Rendering template within layouts/application
+Rendering object_collection/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-20 04:21:45) [GET]
+  Parameters: {"1277017601"=>nil}
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-20 04:21:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Rendering template within layouts/application
+Rendering object_collection/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-20 04:21:49) [GET]
+  Parameters: {"1277017601"=>nil}
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-20 04:21:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Rendering template within layouts/application
+Rendering object_collection/index
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-20 04:21:51) [GET]
+  Parameters: {"1277017601"=>nil}
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-20 04:21:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Rendering template within layouts/application
+Rendering object_collection/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-20 04:21:59) [GET]
+  Parameters: {"1277017601"=>nil}
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
