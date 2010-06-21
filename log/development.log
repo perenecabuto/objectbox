@@ -19544,3 +19544,32 @@ Processing SessionsController#new (for 127.0.0.1 at 2010-06-20 23:23:09) [GET]
 Rendering template within layouts/application
 Rendering sessions/new
 Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SimpletextsController#index (for 127.0.0.1 at 2010-06-20 23:52:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"simpletexts"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/simpletexts]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-20 23:52:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 22ms (View: 17, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-20 23:52:47) [GET]
+
+ActionController::RoutingError (No route matches "/gear_16.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-20 23:53:31) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 23ms (View: 18, DB: 0) | 200 OK [http://localhost/login]
