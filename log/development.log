@@ -19573,3 +19573,17 @@ Processing SessionsController#new (for 127.0.0.1 at 2010-06-20 23:53:31) [GET]
 Rendering template within layouts/application
 Rendering sessions/new
 Completed in 23ms (View: 18, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-20 23:55:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 23ms (View: 18, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-20 23:56:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/login]
