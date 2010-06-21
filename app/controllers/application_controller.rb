@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   end
 
   def default_crumbs
-      root_route = ActionController::Routing::Routes.recognize_path(root_path)
+      root_route = ActionController::Routing::Routes.recognize_path('/')
       add_crumb :label => 'Root', :controller => root_route[:controller]
 
       if controller_name != root_route[:controller]
