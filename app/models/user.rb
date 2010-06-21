@@ -68,6 +68,10 @@ class User < ActiveRecord::Base
     "user_64.png"
   end
 
+  def to_s
+    self.login.capitalize
+  end
+
   protected
 
   def make_activation_code
