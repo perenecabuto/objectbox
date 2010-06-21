@@ -19517,3 +19517,30 @@ Processing SessionsController#new (for 127.0.0.1 at 2010-06-20 23:21:33) [GET]
 Rendering template within layouts/application
 Rendering sessions/new
 Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-20 23:23:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-06-20 23:23:09) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+Redirected to http://localhost:3000/
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing ObjectCollectionController#index (for 127.0.0.1 at 2010-06-20 23:23:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"object_collection"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-20 23:23:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/login]
