@@ -1,0 +1,37 @@
+var postitManager;
+
+window.addEvent('domready', function() {
+
+    if ( !postitManager ) {
+        postitManager = new PostItManager({
+            documentName : documentName,
+            container    : $('container')
+        });
+    }
+
+    if ( ! postitManager.getDocumentName() ) {
+        postitManager.newPostIt({
+            x: 10,
+            y: 10,
+            width: '500px',
+            height: '500px'
+        });
+    }
+
+    $('change-document').addEvent("click", function() {
+        location.href = '../../documents.html';
+        postitManager.save();
+    });
+
+    // "Da vida" aos botoes para trocar papel de parede
+    $$(".set-background").addEvent("click", function() {
+        document.body.setStyles({
+            'background-image'  : "url(" + this.get('src') + ")",
+            'background-repeat' : this.get('repeat')
+        });
+    });
+
+    $$(".set-background")[0].fireEvent('click');
+
+    nicEditors.allTextAreas();
+});

@@ -6,6 +6,9 @@ ActionController::Routing::Routes.draw do |map|
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate'
   map.myprofile '/myprofile', :controller => 'users', :action => 'myprofile'
 
+  map.resources :postits
+  map.resources :boards
+  map.connect 'boards/:id', :controller => :boards, :action => :update, :method => :post
   map.resources :users
   map.resource :session
   map.resources :simpletexts

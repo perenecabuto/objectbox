@@ -9,7 +9,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100617011111) do
+ActiveRecord::Schema.define(:version => 20100622052100) do
+
+  create_table "boards", :force => true do |t|
+    t.string   "title",      :limit => 128, :null => false
+    t.string   "background", :limit => 128, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "postits", :force => true do |t|
+    t.string   "title",            :limit => 128
+    t.text     "content"
+    t.integer  "x"
+    t.integer  "y"
+    t.string   "width",            :limit => 8
+    t.string   "height",           :limit => 8
+    t.string   "background_color", :limit => 16
+    t.string   "color",            :limit => 16
+    t.integer  "board_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "simpletexts", :force => true do |t|
     t.string   "title"

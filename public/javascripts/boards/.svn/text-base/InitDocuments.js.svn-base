@@ -1,0 +1,94 @@
+window.addEvent('domready', function() {
+    var table           = $('documents');
+    var search_results  = $$('.search-results')[0];
+    var search_input    = $('search');
+    var free_to_request = true;
+    var get_results     = new Request.JSON({
+        url       : '/postit/_design/trunk/_view/search',
+        method    : 'GET',
+        data      : { limit: 10 },
+        onRequest : function() {
+            free_to_request = false;
+        },
+        onSuccess : function(result) {
+            var added = {};
+
+            free_to_request = true;
+
+            search_results.getElements('li').dispose();
+
+            if ( result.rows.length < 1 ) {
+                search_results.setStyle('display', 'none');
+                return false;
+            } else {
+                search_results.setStyle('display', 'block');
+            }
+
+            result.rows.each( function(row) {
+                if ( !added[ row.value ] ) {
+                    var link = new Element('a', {
+                        'href': '/postit/_design/trunk/_show/read_postit/' + row.value,
+                        'text': row.value
+                    });
+
+                    search_results.adopt( new Element('li').adopt( link ) );
+                }
+            });
+        }
+    });
+
+    search_results.setStyles({
+        display: 'none',
+        left   : search_input.getStyle('left'),
+        top    : search_input.getStyle('top'),
+        width  : search_input.getStyle('width'),
+        margin : search_input.getStyle('margin')
+    });
+
+    search_input.set('autocomplete', 'off');
+    search_input.addEvent('keyup', function() {
+        if ( !free_to_request ) return false;
+
+        if ( this.get('value').length > 0 ) {
+            get_results.get({ key : JSON.encode( this.get('value').toLowerCase().split(" ") ) });
+        } else {
+            search_results.setStyle('display', 'none');
+        }
+    });
+
+    document.body.addEvent('click', function(e) {
+        if ( e.target != search_input ) {
+            search_results.setStyle('display', 'none');
+        }
+    });
+
+    new Request.JSON({
+        url        : '/postit/_design/trunk/_view/documents',
+        onComplete : function( json ) {
+            json.rows.each( function(row) {
+                var li    = new Element('li').inject( table );
+                var title = new Element('h3', {text: row.id}).inject( li );
+                var desc  = new Element('p', {text: row.desc || '<i style="color:red">Sem descricao</i>'}).inject( li );
+                var date  = new Element('span', {text: row.date}).inject( li );
+
+                li.addEvent('click', function() {
+                    location.href = '/postit/_design/trunk/_show/read_postit/' + row.id;
+                });
+            });
+        }
+    }).get({ limit: 10 });
+
+    $('new-document').addEvent('click', function() {
+        var title;
+
+        do {
+            title = prompt("Informe o nome do documento");
+
+            if ( title == null ) {
+                return false;
+            }
+        } while( new String( title ).match('^\s*$') );
+
+        location.href = '_show/edit_postit/' + title;
+    });
+});

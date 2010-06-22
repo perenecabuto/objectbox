@@ -1,0 +1,47 @@
+<%= stylesheet_link_tag "boards" %>
+<%= stylesheet_link_tag "postit" %>
+
+<%= javascript_include_tag "boards/PostIt" %>
+<%= javascript_include_tag "boards/PostItHelper" %>
+<%= javascript_include_tag "boards/PostItManager" %>
+<%= javascript_include_tag "boards/PostItManagerExtension" %>
+<%= javascript_include_tag "boards/InitPostItEditor" %>
+
+<script type="text/javascript">
+document.addEvent('domready', function() {
+  postitManager.setDocumentName(<%= @board.title.to_s %>);
+  postitManager.restore(<%= @json %>);
+  postitManager.makeAllEditable(true);
+});
+</script>
+
+<div id="board">
+  <% form_for @board do |f| %>
+  <div id="functions">
+    <input type="button" value="novo"   title="criar postit"  onclick="postitManager.newPostIt()" />
+    <input type="button" value="salvar" title="salvar" onclick="postitManager.save('<%= url_for({:action => :update}) %>')" />
+
+    <input type="button" value="↙" title="desfazer" onclick="postitManager.undo()" />
+    <input type="button" value="↗" title="refazer"  onclick="postitManager.redo()" />
+
+    <%= f.text_field :title, :id => "document-name", :style => "width: 400px", :onchange => 'postitManager.setDocumentName(this.value)' %>
+
+    <%= link_to "Trocar de documento", :boards, :id => "change-document", :value => "Outros documentos", :title => "trocar" %>
+  </div>
+  <% end %>
+
+
+  <span id="background-images">
+    <%= image_tag "boards/background.jpg" , :class => "set-background", :repeat => "repeat-x" %>
+    <%= image_tag "boards/bg.jpg"         , :class => "set-background", :repeat => "repeat"   %>
+    <%= image_tag "boards/glossymetal.jpg", :class => "set-background", :repeat => "repeat"   %>
+    <%= image_tag "boards/notes.gif"      , :class => "set-background", :repeat => "repeat"   %>
+    <%= image_tag "boards/zebra.jpg"      , :class => "set-background", :repeat => "repeat"   %>
+  </span>
+
+  <!-- Div com aparencia de vidro -->
+  <div id="container-glass"></div>
+
+  <!-- Container -->
+  <div id="container"></div>
+</div>

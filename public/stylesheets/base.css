@@ -1,6 +1,7 @@
 body {
     background-color: #E3E4FA;
     font-family: Verdana;
+    line-height: 1em;
 }
 
 h1 {
@@ -8,23 +9,35 @@ h1 {
     font-size: 18px;
     color: #777;
     border-bottom: 1px solid #acc;
+    margin-bottom: 20px;
 }
 
 a img {
     border: none;
 }
 
+label {
+  display: inline-block;
+}
+
 
 input, textarea {
-    border: 1px solid black;
+    padding: 5px;
+    border: 1px solid #999;
+    margin-bottom: 8px;
 }
 
 table {
     border-collapse: collapse;
 }
 
+table th {
+  padding-left: 10px;
+  text-align: left;
+}
+
 table tr {
-    border: 1px solid black;
+    border: 1px solid #999;
     border-bottom: none;
 }
 
@@ -66,6 +79,7 @@ table a {
     display: inline-block;
     height: auto;
     margin-top: 10px;
+    margin-left: 10px;
     color: white;
 }
 
@@ -88,13 +102,14 @@ table a {
     border-top: 4px double #ccc;
     border-bottom: 1px dashed #ccc;
     overflow:hidden;
+    z-index: 99;
 }
 
 #page-slice .toggle {
     display: block;
     text-align: center;
     font-size: 8px;
-    color: #ddd;
+    color: #999;
     cursor: pointer;
 }
 
@@ -108,16 +123,21 @@ table a {
     border: none;
     float:left;
     width: 90%;
+    margin: 0px;
 }
 
 #page-slice .slice-search {
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
+    margin-top: 8px;
+    padding-bottom: 4px;
 }
 
 #page-slice input.do-search {
     border:none;
-    padding-top: 1px;
+    padding: 0px;
     padding-left: 2px;
+    margin: 0px;
+    margin-top: 5px;
 }
 
 
@@ -153,7 +173,6 @@ table a {
 
 #content {
     font-family: sans;
-    font-size: 20px;
     margin-top: 60px;
     margin-left: 30px;
     width: 80%;

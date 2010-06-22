@@ -1,0 +1,12 @@
+var postitManager;
+
+window.addEvent('domready', function() {
+    postitManager = new PostItManager({
+        documentName : documentName,
+        container    : $('container')
+    });
+
+    $('change-document').addEvent("click", function() {
+        location.href = '../../documents.html';
+    });
+});

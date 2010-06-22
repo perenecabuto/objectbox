@@ -1,0 +1,146 @@
+#board {
+    background-image      : url(../images/boards/glossymetal.jpg);
+    background-repeat     : repeat;
+    background-attachment : fixed;
+    position              : fixed;
+    bottom                : 0px;
+    left                  : 0px;
+    right                 : 0px;
+    top                   : 0px;
+    margin-top            : 35px;
+}
+
+/* Documents */
+ol#documents {
+    width         : 70%;
+    margin        : auto;
+    margin-top    : 20px;
+    margin-bottom : 20px;
+}
+
+ol#documents li {
+    text-align    : left;
+    background    : #fff;
+    padding       : 10px;
+    cursor        : pointer;
+    padding-right : 20px;
+    border-bottom : 1px dotted #ccc;
+}
+
+ol#documents li strong {
+    color           : #543;
+    font-family     : verdana, sans;
+    font-weight     : bold;
+    text-decoration : underline;
+}
+
+ol#documents li p {
+    min-height: 50px;
+    border: 1px solid #eee;
+    margin: 5px;
+}
+
+ol#documents li span {
+    font-style: oblique;
+    font-size : 8px;
+    float     : right;
+}
+
+/* Menu */
+#functions {
+    border-bottom: 1px dotted black;
+}
+
+#functions input,
+#functions a {
+    background-color: #ccc;
+    border          : 1px solid #eee;
+    opacity         : 0.8;
+    margin          : 2px;
+    margin-left     : 5px;
+    margin-right    : 0px;
+    font-weight     : bold;
+    color           : #000;
+}
+
+#functions a {
+  padding: 5px;
+  padding-bottom: 6px;
+  margin: 0;
+  display: inline-block;
+  text-decoration: none;
+}
+
+#functions a:hover,
+#functions input:hover {
+    opacity : 1.0;
+}
+
+#functions input:active,
+#functions a:active {
+    border: 1px solid red;
+}
+
+/* Background */
+#container {
+    position         : absolute;
+    margin-top       : 24px;
+    top              : 0px;
+    bottom           : 0px;
+    left             : 0px;
+    right            : 0px;
+    background-color : transparent;
+    overflow         : auto;
+}
+
+#container-glass {
+    position         : absolute;
+    margin-top       : 35px;
+    top              : 0px;
+    bottom           : 0px;
+    left             : 0px;
+    right            : 0px;
+    background-color : #f5f5f5;
+    opacity          : 0.5;
+}
+
+#background-images {
+    position         : relative;
+    background-color : transparent;
+    z-index          : 10;
+    padding          : 0px;
+    margin           : 0px;
+}
+
+.set-background {
+    width        : 10px;
+    height       : 10px;
+    float        : right;
+    border       : 1px solid black;
+    padding      : 0px;
+    margin       : 0px;
+    margin-top   : 2px;
+    margin-left  : 2px;
+}
+
+/* Search result */
+.search-results {
+    position : absolute;
+    z-index  : 10;
+    border   : 1px solid black;
+}
+
+.search-results li {
+    background: #fff;
+}
+
+.search-results a {
+    padding         : 2px;
+    display         : block;
+    color           : #000;
+    text-decoration : none;
+}
+
+.search-results a:hover {
+    background-color : #f5f5f5;
+}

@@ -1,0 +1,26 @@
+<%= javascript_include_tag "boards/InitDocuments" %>
+<%= stylesheet_link_tag "boards" %>
+
+<div id="board">
+    <!-- Botoes -->
+    <div id="functions">
+        <input type="text" name="search" id="search" style="width: 400px" />
+        <ol class="search-results"></ol>
+    </div>
+
+    <!-- Div com aparencia de vidro -->
+    <div id="container-glass"></div>
+
+    <!-- Container -->
+    <div id="container">
+        <ol id="documents">
+          <li id="new-document"> <strong><%= link_to 'Novo quadro', new_board_path %></strong> </li>
+          <% for board in @boards %>
+          <li>
+            <strong><%= link_to board.title, board %></strong>
+            <strong><%# board.author %></strong>
+          </li>
+          <% end %>
+        </ol>
+    </div>
+</div>
