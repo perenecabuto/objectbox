@@ -3,7 +3,6 @@ set :application, "objectbox"
 set :repository,  "git://github.com/perenecabuto/objectbox.git"
 set :scm, :git
 set :user, "perenecabuto"  # The server's user for deploys
-set :scm_passphrase, "developer"  # The deploy user's password
 set :branch, "master"
 
 set :deploy_via, :remote_cache
