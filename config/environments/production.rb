@@ -24,7 +24,7 @@ config.action_view.cache_template_loading            = true
 # config.action_mailer.raise_delivery_errors = false
 
 # Enable threaded mode
-# config.threadsafe!
+config.threadsafe!
 
 config.cache_store = :mem_cache_store
 config.action_mailer.delivery_method = :sendmail

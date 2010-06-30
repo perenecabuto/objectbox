@@ -7,20 +7,29 @@ module ApplicationHelper
   def crumbs_tag
     @crumbs ||= []
 
-    separator = "</li> <li>→</li> <li>"
-    result = %{<li>}
-    result += @crumbs.collect{|c| c = c.clone; link_to(c.class == Hash ? c.delete(:label): c, c)}.join(separator)
-    result += %{</li>}
-    result
+    crumbs_tags = @crumbs.collect do |c|
+      c.third.merge! :class => 'current' if current_page? c.second
+      link_to(*c)
+    end
+
+    "<li>#{crumbs_tags.join('</li><li>→</li><li>')}</li>"
   end
 
   def crumbs_text
-    @crumbs.collect {|c| c[:label] || c }.join("→")
+    @crumbs ||= []
+    @crumbs.collect {|c| c.first }.join("→")
   end
 
-  def add_crumb(item)
+  def crumb_to(*args)
     @crumbs ||= []
-    @crumbs << item
+    args[2] ||= {}
+    @crumbs << args
+  end
+
+  def current_controller_object
+    object = current_controller_model
+    object = current_controller_model.send(:find, params[:id]) if params[:id]
+    object
   end
 
   def model_icon(model)
@@ -37,9 +46,4 @@ module ApplicationHelper
   rescue NameError
   end
 
-  def current_controller_object
-    object = current_controller_model
-    object = current_controller_model.send(:find, params[:id]) if params[:id]
-    object
-  end
 end

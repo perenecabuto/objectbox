@@ -1,6 +1,8 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
+  acts_as_owner
+
   include Authentication
   include Authentication::ByPassword
   include Authentication::ByCookieToken

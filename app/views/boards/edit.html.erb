@@ -9,7 +9,7 @@
 
 <script type="text/javascript">
 document.addEvent('domready', function() {
-  postitManager.setDocumentName(<%= @board.title.to_s %>);
+  postitManager.setDocumentName('<%=h @board.title.to_s %>');
   postitManager.restore(<%= @json %>);
   postitManager.makeAllEditable(true);
 });
@@ -24,7 +24,7 @@ document.addEvent('domready', function() {
     <input type="button" value="↙" title="desfazer" onclick="postitManager.undo()" />
     <input type="button" value="↗" title="refazer"  onclick="postitManager.redo()" />
 
-    <%= f.text_field :title, :id => "document-name", :style => "width: 400px", :onchange => 'postitManager.setDocumentName(this.value)' %>
+    <%= f.text_field :title, :id => "document-name", :style => "width: 400px", :onkeyup => 'postitManager.setDocumentName(this.value)' %>
 
     <%= link_to "Trocar de documento", :boards, :id => "change-document", :value => "Outros documentos", :title => "trocar" %>
   </div>

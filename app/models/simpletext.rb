@@ -1,8 +1,5 @@
 class Simpletext < ActiveRecord::Base
-
-  belongs_to :autor
-
-  before_create :set_autor
+  acts_as_possession
 
   def to_s
     self.title
@@ -10,12 +7,6 @@ class Simpletext < ActiveRecord::Base
 
   def self.icon
     "pencil_64.png"
-  end
-
-  protected
-
-  def set_autor
-    self.autor_id = Authorization.current_user.id
   end
 
 end

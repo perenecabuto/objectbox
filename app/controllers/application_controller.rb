@@ -21,17 +21,19 @@ class ApplicationController < ActionController::Base
 
   def default_crumbs
       root_route = ActionController::Routing::Routes.recognize_path('/')
-      add_crumb :label => 'Root', :controller => root_route[:controller]
+      crumb_to 'Root', :controller => root_route[:controller]
 
       if controller_name != root_route[:controller]
-        add_crumb :label => controller_name.camelize, :controller => controller_name
+        crumb_to controller_name.capitalize, :controller => controller_name
       end
 
       if params.has_key?:id
-        add_crumb current_controller_object
+        crumb_to current_controller_object, :action => :show
       end
 
-      add_crumb :label => action_name.camelize, :controller => controller_name unless %w{index show}.include? action_name
+      unless %{index show}.include? action_name
+        crumb_to action_name.capitalize
+      end
   end
 
 end

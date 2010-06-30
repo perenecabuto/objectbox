@@ -63,7 +63,7 @@ class BoardsController < ApplicationController
 
   def json_to_postit
     params[:board] ||= {}
-    params[:board][:title] = params.delete(:title).to_json
+    params[:board][:title] = params.delete(:title)
     params[:board][:background] = params.delete(:background)
     params[:board][:postits_attributes] = params.delete(:elements) || []
   end

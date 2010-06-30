@@ -3,3 +3,14 @@
 <% for model in @models %>
   <%= link_to model.respond_to?(:icon) ? image_tag(model_icon(model)): model, model.new, :title => model %>
 <% end %>
+
+<br />
+<br />
+<h1>Meus items</h1>
+<% for possession in current_user.possessions %>
+  <div style="width : 100px; height: 120px; float: left">
+  <%= link_to image_tag(model_icon(possession.class)), possession, :title => possession %>
+  <br />
+  <span><%= possession.to_s %></span>
+  </div>
+<% end %>

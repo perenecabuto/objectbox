@@ -9,13 +9,12 @@
         <title><%= crumbs_text %></title>
     </head>
     <body>
+        <ul id="topo">
+          <%= crumbs_tag %>
+        </ul>
 
-        <ul id="topo"><%= crumbs_tag %></ul>
+        <span class="user-icon"><%= gravatar_tag current_user, :size => 20 %></span>
 
-        <div class="messages" style="float:left; top: 50px; width: 100%">
-            <p class="error"><%= flash[:error] %></p>
-            <p class="notice"><%= flash[:notice] %></p>
-        </div>
 
         <div id="slice-door"></div>
         <div id="page-slice">
@@ -37,8 +36,12 @@
                 <%= link_to image_tag("stop_16.png") + " sair", logout_path %>
                 </li>
             </ul>
-            <span class="toggle">esconder
-            </span>
+            <span class="toggle">esconder </span>
+        </div>
+
+        <div class="messages" style="float:left; top: 50px; width: 100%">
+            <p class="error"><%= flash[:error] %></p>
+            <p class="notice"><%= flash[:notice] %></p>
         </div>
 
         <div id="content">

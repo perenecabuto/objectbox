@@ -3,14 +3,14 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Autor</th>
+    <th>author</th>
     <th>Content</th>
   </tr>
 
 <% @simpletexts.each do |simpletext| %>
   <tr>
     <td><%=h simpletext.title %></td>
-    <td><%=h simpletext.autor %></td>
+    <td><%=h simpletext.author %></td>
     <td><%=h simpletext.content %></td>
     <td><%= link_to 'Show', simpletext %></td>
     <td><%= link_to 'Edit', edit_simpletext_path(simpletext) %></td>

@@ -17,7 +17,8 @@ Rails::Initializer.run do |config|
   # Specify gems that this application depends on and have them installed with rake gems:install
   config.gem "sqlite3-ruby", :lib => "sqlite3"
   config.gem "ferret"
-
+  config.gem "gravatarify"
+  config.gem "acts_as_commentable"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

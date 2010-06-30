@@ -59,7 +59,7 @@ class SimpletextsController < ApplicationController
     respond_to do |format|
       if @simpletext.update_attributes(params[:simpletext])
         flash[:notice] = 'Simpletext was successfully updated.'
-        format.html { redirect_to(@simpletext) }
+        format.html { redirect_to :back }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
