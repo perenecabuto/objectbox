@@ -4,7 +4,8 @@ window.addEvent('domready', function() {
 
     if ( !postitManager ) {
         postitManager = new PostItManager({
-            container    : $('container')
+            container    : $('container'),
+            background   : $('board')
         });
     }
 

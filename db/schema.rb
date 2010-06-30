@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100622052100) do
+ActiveRecord::Schema.define(:version => 20100625050746) do
 
   create_table "boards", :force => true do |t|
     t.string   "title",      :limit => 128, :null => false
@@ -17,6 +17,17 @@ ActiveRecord::Schema.define(:version => 20100622052100) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "owners_possessions", :force => true do |t|
+    t.integer  "owner_id",        :null => false
+    t.string   "owner_type",      :null => false
+    t.integer  "possession_id",   :null => false
+    t.string   "possession_type", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "owners_possessions", ["owner_id", "owner_type", "possession_id", "possession_type"], :name => "index_owners_possessions_on_owner_id_and_owner_type_and_possession_id_and_possession_type", :unique => true
 
   create_table "postits", :force => true do |t|
     t.string   "title",            :limit => 128

@@ -4,12 +4,14 @@ var PostItManager = new Class({
     container         : null,
     documentName      : null,
     revision          : null,
+    background        : document.body,
 
     initialize: function( param ) {
         this.container        = document.body;
         this.postitCollection = new Array();
         this.history          = new Array();
         this.documentName     = param.documentName;
+        this.background       = param.background;
 
         if ( PostItHelper ) {
             this.helper = new PostItHelper();
@@ -81,8 +83,8 @@ var PostItManager = new Class({
             });
         }, _this);
 
-        this.container.setStyle('background-image',  json.background.image  );
-        this.container.setStyle('background-repeat', json.background.repeat );
+        this.background.setStyle('background-image',  json.background.image  );
+        this.background.setStyle('background-repeat', json.background.repeat );
 
         return this;
     },

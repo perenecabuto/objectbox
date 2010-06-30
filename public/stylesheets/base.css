@@ -68,18 +68,19 @@ table a {
     left: 0;
     right: 0;
     height: 35px;
+    padding-left: 30px;
     background-image: url(../images/top-bg.png);
 }
 
-#topo li:first-child {
-    font-size: 16px;
+#topo li a.current {
+    font-size: 20px;
 }
 
 #topo li {
     display: inline-block;
     height: auto;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-right: 5px;
     color: white;
 }
 
@@ -178,3 +179,11 @@ table a {
     width: 80%;
 }
 
+/* user icon */
+.user-icon {
+  position: absolute;
+  padding: 3px;
+  top: 4px;
+  float: left;
+  z-index: 3px;
+}

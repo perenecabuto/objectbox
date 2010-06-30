@@ -9,7 +9,7 @@ PostItManager.implement({
         }
 
         if ( !param.container ) {
-            param.container = this.container;
+          param.container = this.container;
         }
 
         var postit = new PostIt( param );
@@ -25,8 +25,8 @@ PostItManager.implement({
             title    : this.getDocumentName(),
             elements : [],
             background : {
-                image  : this.container.getStyle('background-image'),
-                repeat : this.container.getStyle('background-repeat')
+                image  : this.background.getStyle('background-image'),
+                repeat : this.background.getStyle('background-repeat')
             }
         };
 
