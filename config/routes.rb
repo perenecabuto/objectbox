@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :postits
+
+  map.resources :postits
+
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
@@ -6,8 +10,9 @@ ActionController::Routing::Routes.draw do |map|
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate'
   map.myprofile '/myprofile', :controller => 'users', :action => 'myprofile'
 
-  map.resources :postits
-  map.resources :boards
+  map.resources :boards do |board|
+    board.resources :postits
+  end
   map.connect 'boards/:id', :controller => :boards, :action => :update, :method => :post
   map.resources :users
   map.resource :session

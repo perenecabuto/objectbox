@@ -8,8 +8,7 @@ module ApplicationHelper
     @crumbs ||= []
 
     crumbs_tags = @crumbs.collect do |c|
-      c.third.merge! :class => 'current' if current_page? c.second
-      link_to(*c)
+      current_page?(c.second) ? %(<span class="current">#{c.first}</span>) : link_to(*c)
     end
 
     "<li>#{crumbs_tags.join('</li><li>→</li><li>')}</li>"
@@ -17,7 +16,7 @@ module ApplicationHelper
 
   def crumbs_text
     @crumbs ||= []
-    @crumbs.collect {|c| c.first }.join("→")
+    @crumbs.collect {|c| c.first }.join(" > ")
   end
 
   def crumb_to(*args)

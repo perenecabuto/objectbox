@@ -1,19 +1,33 @@
 body {
-    background-color: #E3E4FA;
-    font-family: Verdana;
-    line-height: 1em;
+  background-color: #E3E4FA;
+  font-family: georgia,Verdana;
+  text-shadow: 2px 2px 3px rgba(135, 145, 135, 0.65);
+  line-height: 1em;
+  width: 100%;
+  height: 100%;
 }
 
 h1 {
-    font-family: Verdana;
-    font-size: 18px;
-    color: #777;
-    border-bottom: 1px solid #acc;
-    margin-bottom: 20px;
+  color: #777;
+  border-bottom: 1px solid #acc;
+  margin-bottom: 20px;
+  font-family:georgia,serif;
+  /*font-size:410%;*/
+  font-size:30px;
+  font-variant:normal;
+  font-weight:bold;
+  letter-spacing:-1px;
+  line-height:normal;
 }
 
+/* TODO definir estilo para h2 para melhorar a página inicial */
+h2 {
+
+}
+
+
 a img {
-    border: none;
+  border: none;
 }
 
 label {
@@ -22,13 +36,13 @@ label {
 
 
 input, textarea {
-    padding: 5px;
-    border: 1px solid #999;
-    margin-bottom: 8px;
+  padding: 5px;
+  border: 1px solid #999;
+  margin-bottom: 8px;
 }
 
 table {
-    border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 table th {
@@ -37,146 +51,156 @@ table th {
 }
 
 table tr {
-    border: 1px solid #999;
-    border-bottom: none;
+  border: 1px solid #999;
+  border-bottom: none;
 }
 
 table tr th {
 }
 
 table tr td {
-    padding: 10px;
-    background-color: white;
+  padding: 10px;
+  background-color: white;
 }
 
 table tr:hover td {
-    background-color: #ffe;
+  background-color: #ffe;
 }
 
 table a {
-    color: black;
-    font-weight: bold;
+  color: black;
+  font-weight: bold;
 }
 
 
 #topo {
-    font-family: Arial, Verdana;
-    font-size: 13px;
-    font-weight: bold;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 35px;
-    padding-left: 30px;
-    background-image: url(../images/top-bg.png);
+  font-family: Arial, Verdana;
+  font-size: 13px;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35px;
+  padding-left: 30px;
+  background-image: url(../images/top-bg.png);
 }
 
-#topo li a.current {
-    font-size: 20px;
+#topo li .current {
+  font-size: 20px;
 }
 
 #topo li {
-    display: inline-block;
-    height: auto;
-    margin-top: 10px;
-    margin-right: 5px;
-    color: white;
+  display: inline-block;
+  height: auto;
+  margin-top: 10px;
+  margin-right: 5px;
+  color: white;
 }
 
 #topo li a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 #topo li a:active {
-    color: red;
+  color: red;
 }
 
 #page-slice {
-    background-color: white;
-    width: 200px;
-    height: auto;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    border-top: 4px double #ccc;
-    border-bottom: 1px dashed #ccc;
-    overflow:hidden;
-    z-index: 99;
+  background-color: white;
+  width: 200px;
+  height: auto;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border-top: 4px double #ccc;
+  border-bottom: 1px dashed #ccc;
+  overflow:hidden;
+  z-index: 99;
 }
 
-#page-slice .toggle {
-    display: block;
-    text-align: center;
-    font-size: 8px;
-    color: #999;
-    cursor: pointer;
+
+.toggle {
+  display: block;
+  text-align: center;
+  font-size: 8px;
+  color: #999;
+  cursor: pointer;
+}
+
+h1 .toggle {
+  display: inline;
+  text-align: left;
+}
+
+h1 .toggle:hover {
+  color: #f4f;
 }
 
 #page-slice ul {
-    font-family: monospace;
-    list-style-type:none;
-    padding: 5px;
+  font-family: monospace;
+  list-style-type:none;
+  padding: 5px;
 }
 
 #page-slice input.search {
-    border: none;
-    float:left;
-    width: 90%;
-    margin: 0px;
+  border: none;
+  float:left;
+  width: 90%;
+  margin: 0px;
 }
 
 #page-slice .slice-search {
-    border: 1px solid #ccc;
-    margin-top: 8px;
-    padding-bottom: 4px;
+  border: 1px solid #ccc;
+  margin-top: 8px;
+  padding-bottom: 4px;
 }
 
 #page-slice input.do-search {
-    border:none;
-    padding: 0px;
-    padding-left: 2px;
-    margin: 0px;
-    margin-top: 5px;
+  border:none;
+  padding: 0px;
+  padding-left: 2px;
+  margin: 0px;
+  margin-top: 5px;
 }
 
 
 
 #page-slice ul li:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
 #page-slice ul li {
-    padding: 2px;
-    vertical-align: middle;
+  padding: 2px;
+  vertical-align: middle;
 }
 
 #page-slice a {
-    text-decoration: none;
-    color: black;
-    display: block;
+  text-decoration: none;
+  color: black;
+  display: block;
 }
 
 #page-slice img {
-    border: none;
-    margin-right: 5px;
+  border: none;
+  margin-right: 5px;
 }
 
 #slice-door {
-    width: 217px;
-    height: 10px;
-    position: fixed;
-    top: 16px;
-    right: 12px;
-    background-color: black;
+  width: 217px;
+  height: 10px;
+  position: fixed;
+  top: 16px;
+  right: 12px;
+  background-color: black;
 }
 
 #content {
-    font-family: sans;
-    margin-top: 60px;
-    margin-left: 30px;
-    width: 80%;
+  font-family: sans;
+  margin-top: 60px;
+  margin-left: 30px;
+  width: 80%;
 }
 
 /* user icon */
@@ -186,4 +210,57 @@ table a {
   top: 4px;
   float: left;
   z-index: 3px;
+}
+
+/* messages */
+.messages {
+  display: block;
+  margin-left: 30px;
+  margin-bottom: 5px;
+  height: 20px;
+  padding: 0px;
+}
+
+.messages .error {
+  color: #f44;
+}
+
+.messages .notice {
+  color: #0f3;
+}
+
+.errorExplanation h2 {
+  border-bottom: 2px solid #f44;
+  margin-bottom: 5px;
+}
+
+.errorExplanation ul {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.errorExplanation p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.errorExplanation li {
+  list-style-type:square;
+  margin-left: 15px;
+}
+
+.fieldWithErrors input,
+.fieldWithErrors select,
+.fieldWithErrors textarea
+{
+  border: 2px dashed #f44;
+}
+
+.hidden {
+  display: none;
+}
+
+@media print {
+  table th {
+    border: 1px solid #999;
 }

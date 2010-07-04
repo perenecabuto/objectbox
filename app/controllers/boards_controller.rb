@@ -31,7 +31,6 @@ class BoardsController < ApplicationController
     }
 
     @json = @hash.to_json
-    puts @json
   end
 
   def update
@@ -45,7 +44,7 @@ class BoardsController < ApplicationController
 
   def build_board
     @board ||= Board.new
-    @board.attributes = params[:board]
+    #@board.attributes = params[:board]
   end
 
   def load_board
@@ -53,7 +52,13 @@ class BoardsController < ApplicationController
   end
 
   def save
-    if @board.save
+    @board.postits.each do |p|
+      unless params[:board][:postits_attributes].any? {|item| !item.has_key? :id or item[:id].to_i == p.id}
+        p.destroy
+      end
+    end
+
+    if @board.update_attributes params[:board]
       flash[:notice] = 'Salvo com sucesso'
     else
       render :action => :new
@@ -65,6 +70,7 @@ class BoardsController < ApplicationController
     params[:board] ||= {}
     params[:board][:title] = params.delete(:title)
     params[:board][:background] = params.delete(:background)
-    params[:board][:postits_attributes] = params.delete(:elements) || []
+    params[:board][:postits_attributes] = params.delete(:elements).values unless params[:elements].nil?
+    params[:board][:postits_attributes] ||= []
   end
 end

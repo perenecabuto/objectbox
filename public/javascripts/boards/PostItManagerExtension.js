@@ -14,6 +14,14 @@ PostItManager.implement({
 
         var postit = new PostIt( param );
 
+        var _manager = this;
+        var _old_destroy = postit.destroy;
+
+        postit.destroy = function() {
+          _manager.destroy( this );
+          _old_destroy.attempt([], this)
+        };
+
         this.helper.animate( postit );
         this.postitCollection.push( postit );
 
@@ -98,6 +106,37 @@ PostItManager.implement({
         this.container.setStyle('background-repeat', json.background.repeat );
 
         return this;
+    },
+
+    makeAllEditable: function(isEditable) {
+      this.postitCollection.each(function(el) {
+        el.makeEditable(isEditable);
+      });
+    },
+
+    destroyAll: function(force) {
+        if ( this.postitCollection.length < 1 ) {
+            return;
+        }
+
+        if ( !force && !confirm("Deseja realmente destruir todas as anotacoes!?") ) {
+            return false;
+        }
+
+        for ( var i = this.postitCollection.length -1; i >= 0; i-- ) {
+            this.postitCollection[i].destroy();
+            this.postitCollection.splice(i,1);
+        };
+
+        return this;
+    },
+
+    destroy: function(postit) {
+        for ( var i = this.postitCollection.length -1; i >= 0; i-- ) {
+          if ( this.postitCollection[i] == postit ) {
+            this.postitCollection.splice(i,1);
+          }
+        };
     },
 
     redo: function() {

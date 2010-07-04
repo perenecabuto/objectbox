@@ -38,29 +38,6 @@ var PostItManager = new Class({
         return postit;
     },
 
-    makeAllEditable: function(isEditable) {
-      this.postitCollection.each(function(el) {
-        el.makeEditable(isEditable);
-      });
-    },
-
-    destroyAll: function(force) {
-        if ( this.postitCollection.length < 1 ) {
-            return;
-        }
-
-        if ( !force && !confirm("Deseja realmente destruir todas as anotacoes!?") ) {
-            return false;
-        }
-
-        for ( var i = this.postitCollection.length -1; i >= 0; i-- ) {
-            this.postitCollection[i].destroy();
-            this.postitCollection.splice(i,1);
-        };
-
-        return this;
-    },
-
     restore: function(json) {
         var _this = this;
 
@@ -85,6 +62,12 @@ var PostItManager = new Class({
 
         this.background.setStyle('background-image',  json.background.image  );
         this.background.setStyle('background-repeat', json.background.repeat );
+
+        var postit_in_uri = $pick( new String(window.location).match(/#(postit-\d+)$/), [] )[1];
+
+        if ( postit_in_uri ) {
+          $(postit_in_uri).fireEvent('click').fireEvent('mouseup');
+        }
 
         return this;
     },

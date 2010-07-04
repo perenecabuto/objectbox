@@ -1,57 +1,68 @@
 /* Postit */
 .postit {
-    min-width           : 14em;
-    width               : 14em;
+  min-width           : 16em;
+  width               : 14em;
 
-    min-height          : 9em;
-    height              : 9em;
+  min-height          : 9em;
+  height              : 9em;
 
-    color               : #fff;
-    border              : 1px solid #fff;
-    background-color    : #000;
-    overflow            : hidden;
-    position            : absolute;
+  color               : #fff;
+  background-color    : #000;
+  overflow            : hidden;
+  position            : absolute;
 }
 
 .postit img.resize {
-    position : absolute;
-    bottom   : -1px;
-    right    : -1px;
-    z-index  : 1;
-    cursor   : se-resize;
+  position : absolute;
+  bottom   : -1px;
+  right    : -1px;
+  z-index  : 1;
+  cursor   : se-resize;
+  opacity  : 0.3;
 }
 
 .postit span.postit-title {
-    float       : left;
-    font-size   : 10px;
+  font-size   : 10px;
+  font-weight : bold;
+  padding     : 0px;
 }
 
 .postit textarea.postit-content {
-    font-family      : monospace;
-    font-size        : 12px;
-    background-color : inherit;
-    border           : none;
-    color            : inherit;
-    width            : 100%;
-    height           : 80%;
-    margin           : auto auto;
-    padding          : 10px;
+  font-family      : monospace;
+  font-size        : 12px;
+  background-color : inherit;
+  border           : none;
+  color            : inherit;
+  width            : 100%;
+  height           : 80%;
+  margin           : auto auto;
+  padding          : 10px;
 }
 
 .postit div.postit-functions {
-    border-bottom : 1px solid #fff;
-    padding       : 10px;
-    height        : 6px;
-    cursor        : move;
+  font-weight   : bold;
+  padding       : 10px;
+  height        : 6px;
+  cursor        : move;
 }
 
 .postit div.postit-color-functions {
-    float         : right;
+  float         : right;
 }
 
 .postit div.postit-color-functions span {
-    height : 8px;
-    width  : 8px;
-    float  : right;
-    cursor : pointer;
+  height : 8px;
+  width  : 8px;
+  float  : right;
+  cursor : pointer;
+}
+
+.postit .postit-delete {
+  font-family: arial;
+  text-decoration: none;
+  background-image: url(../images/boards/delete.png);
+  width: 16px;
+  margin-left: 8px;
+  margin-top: -3px;
+  float: right;
 }

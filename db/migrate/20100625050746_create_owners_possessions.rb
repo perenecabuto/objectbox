@@ -1,6 +1,6 @@
 class CreateOwnersPossessions < ActiveRecord::Migration
   def self.up
-    create_table :owners_possessions do |t|
+    create_table :owners_possessions, :id => false do |t|
       t.references :owner, :polymorphic => true, :null => false
       t.references :possession, :polymorphic => true, :null => false
 

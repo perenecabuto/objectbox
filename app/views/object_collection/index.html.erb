@@ -4,13 +4,16 @@
   <%= link_to model.respond_to?(:icon) ? image_tag(model_icon(model)): model, model.new, :title => model %>
 <% end %>
 
-<br />
-<br />
-<h1>Meus items</h1>
+<br /><br />
+<br /><br />
+
+<h1>Meus items <%= link_to "toggle", 'javascript: void(0)', :class => :toggle,
+  :onclick => "$$('.possession').toggleClass('hidden')" %>
+</h1>
+
 <% for possession in current_user.possessions %>
-  <div style="width : 100px; height: 120px; float: left">
-  <%= link_to image_tag(model_icon(possession.class)), possession, :title => possession %>
-  <br />
-  <span><%= possession.to_s %></span>
+  <div class="possession" style="width : 100px; height: 120px; float: left; padding: 5px">
+  <%= link_to image_tag(model_icon(possession.class)), possession, :title => possession.class %>
+  <p style="font-size: 12px; font-family: monospace; font-style: italic"><%= possession.to_s %></p>
   </div>
 <% end %>

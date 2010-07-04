@@ -1,0 +1,24 @@
+<h1>Listing postits</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Author</th>
+  </tr>
+
+<% @postits.each do |postit| %>
+  <tr>
+    <td><%=h postit.title %></td>
+    <td><%=h postit.content %></td>
+    <td><%=h postit.author %></td>
+    <td><%= link_to 'Show', postit %></td>
+    <td><%= link_to 'Edit', edit_postit_path(postit) %></td>
+    <td><%= link_to 'Destroy', postit, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New postit', new_postit_path %>

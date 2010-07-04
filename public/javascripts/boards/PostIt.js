@@ -5,13 +5,13 @@ var PostIt = new Class({
     id       : null,
 
     color_functions: [
-        new Element('span', { styles: {background: 'black' , color:'white'} }),
-        new Element('span', { styles: {background: 'white' , color:'black'} }),
-        new Element('span', { styles: {background: 'gray'  , color:'black'} }),
-        new Element('span', { styles: {background: 'purple', color:'white'} }),
-        new Element('span', { styles: {background: 'red'   , color:'white'} }),
-        new Element('span', { styles: {background: 'green' , color:'white'} }),
-        new Element('span', { styles: {background: 'yellow', color:'black'} })
+        new Element('span', { styles: {background: 'black', color:'white'} }),
+        new Element('span', { styles: {background: 'white', color:'black'} }),
+        new Element('span', { styles: {background: '#ddd' , color:'black'} }),
+        new Element('span', { styles: {background: '#66f' , color:'white'} }),
+        new Element('span', { styles: {background: '#f44' , color:'white'} }),
+        new Element('span', { styles: {background: '#6f6' , color:'black'} }),
+        new Element('span', { styles: {background: '#ff6' , color:'black'} })
     ],
 
     initialize: function( param ) {
@@ -36,8 +36,14 @@ var PostIt = new Class({
         var functions = new Element('div', { 'class':'postit-functions' }).inject(this.element);
         var content   = new Element('textarea', { 'class':'postit-content' }).inject(this.element);
 
+        var delete_function_element = new Element('a',    { 'class':'postit-delete' }).inject(functions);
         var color_function_elements = new Element('div',  { 'class':'postit-color-functions' }).inject(functions);
         var title                   = new Element('span', { 'class':'postit-title', 'title':'Duplo clique para alterar o titulo' }).inject(functions);
+
+        var postit = this;
+        delete_function_element
+        .set({html: "&nbsp;", href: "javascript: void(0);"})
+        .addEvent("click", function() { postit.destroy() });
 
         // Define posicao
         this.element.setStyles({
@@ -66,8 +72,6 @@ var PostIt = new Class({
                     'border-color'    : this.getStyle('color'),
                     'color'           : this.getStyle('color')
                 });
-
-                this.getParent().setStyle('border-bottom', '1px solid ' + param.color || this.getStyle('color'));
             });
         });
 

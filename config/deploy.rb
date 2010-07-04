@@ -30,10 +30,16 @@ namespace :deploy do
   end
 
   desc "Restart Application"
-  task :restart, :roles => :app, :depends => "gems:install" do
-    run "cd #{current_release}; RAILS_ENV=production rake db:migrate"
-    run "touch #{current_release}/tmp/restart.txt"
-    run "cp #{current_release}/db/development.sqlite3 #{current_release}/db/production.sqlite3"
+  task :restart, :roles => :app, :depends => ["gems:install"] do
+    run "touch #{current_path}/tmp/restart.txt"
+    run <<-COMMAND
+      rm -f    #{current_path}/db/production.sqlite3;
+      mkdir -p #{shared_path}/db/;
+      touch    #{shared_path}/db/production.sqlite3;
+      ln -snf  #{shared_path}/db/production.sqlite3 #{current_release}/db/production.sqlite3;
+      cd #{current_path};
+      RAILS_ENV=production rake db:migrate
+    COMMAND
   end
 end
 

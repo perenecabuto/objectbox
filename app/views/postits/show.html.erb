@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%=h @postit.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @postit.content %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%=h @postit.author %>
+</p>
+
+
+<%= link_to 'Edit', edit_postit_path(@postit) %> |
+<%= link_to 'Back', postits_path %>

@@ -3,8 +3,9 @@
         <%= javascript_include_tag "mootools-core" %>
         <%= javascript_include_tag "mootools-more" %>
         <%= javascript_include_tag "menu" %>
-        <%= stylesheet_link_tag "reset" %>
-        <%= stylesheet_link_tag "base" %>
+        <%= javascript_include_tag "font_resize" %>
+        <%= stylesheet_link_tag "reset", :media => :all %>
+        <%= stylesheet_link_tag "base", :media => :all %>
 
         <title><%= crumbs_text %></title>
     </head>
@@ -15,13 +16,24 @@
 
         <span class="user-icon"><%= gravatar_tag current_user, :size => 20 %></span>
 
-
         <div id="slice-door"></div>
         <div id="page-slice">
             <ul>
                 <li class="slice-search">
                 <%= text_field_tag "", nil, :class => :search -%>
                 <%= image_submit_tag "gear_16.png", :class => "do-search", :alt => ">" -%>
+                </li>
+
+                <li>
+                  <%= link_to image_tag("user_16.png") + " Novo cadastro", new_user_path %>
+                </li>
+
+                <li>
+                  <%= link_to image_tag("pdf.gif") + " Exportar para PDF",
+                  request.request_uri == root_path ? params.merge({:action => "#{params[:action]}.pdf" }) :
+                    request.url.empty? ?
+                    params.merge({:format => :pdf}) : request.url.gsub(%r{(.)/?(\?.*)?$},'\1.pdf\2')
+                  %>
                 </li>
                 <li>
                 <%= link_to image_tag("key_16.png") + " meu cadastro", myprofile_path %>

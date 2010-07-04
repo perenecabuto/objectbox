@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :email
   validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
 
-  before_create :make_activation_code 
+  before_create :make_activation_code
 
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
@@ -78,12 +78,5 @@ class User < ActiveRecord::Base
 
   def make_activation_code
     self.activation_code = self.class.make_token
-  end
-end
-
-class Autor < User
-  def to_s
-    return self.name unless self.name.empty?
-    self.login || self.email
   end
 end
