@@ -25,9 +25,8 @@ module ActsAsPossession
 
   module InstanceMethods
     def method_missing(meth, *args, &blk)
+      return super if self.respond_to?(meth)
       owners_possessions.send(meth, *args, &blk)
-    rescue NoMethodError => e
-      super
     end
 
     def owners_possessions_with_autobuild
