@@ -1,4 +1,3 @@
-
 PostItManager.implement({
     history           : null,
     historyIndex      : 0,
@@ -65,9 +64,8 @@ PostItManager.implement({
             url       : url,
             data      : json,
             onComplete: function( response ) {
-                if ( response ) {
-                    _this.revision = response.rev;
-                }
+                if ( response.id ) { url += '/' + response.id }
+                if ( response ) { location.href = url }
             }
         }).post(json);
 

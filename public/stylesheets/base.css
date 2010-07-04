@@ -208,6 +208,7 @@ h1 .toggle:hover {
   position: absolute;
   padding: 3px;
   top: 4px;
+  left: 4px;
   float: left;
   z-index: 3px;
 }

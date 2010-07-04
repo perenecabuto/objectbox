@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(:version => 20100625050746) do
     t.datetime "updated_at"
   end
 
-  create_table "owners_possessions", :id => false, :force => true do |t|
+  create_table "owners_possessions", :force => true do |t|
     t.integer  "owner_id",        :null => false
     t.string   "owner_type",      :null => false
     t.integer  "possession_id",   :null => false

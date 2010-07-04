@@ -66,7 +66,7 @@ var PostItManager = new Class({
         var postit_in_uri = $pick( new String(window.location).match(/#(postit-\d+)$/), [] )[1];
 
         if ( postit_in_uri ) {
-          $(postit_in_uri).fireEvent('click').fireEvent('mouseup');
+          $(postit_in_uri).fireEvent('click').fireEvent('mousedown');
         }
 
         return this;

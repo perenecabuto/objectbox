@@ -5,7 +5,7 @@ var PostIt = new Class({
     id       : null,
 
     color_functions: [
-        new Element('span', { styles: {background: 'black', color:'white'} }),
+        new Element('span', { styles: {background: '#484848', color:'white'} }),
         new Element('span', { styles: {background: 'white', color:'black'} }),
         new Element('span', { styles: {background: '#ddd' , color:'black'} }),
         new Element('span', { styles: {background: '#66f' , color:'white'} }),
@@ -31,7 +31,7 @@ var PostIt = new Class({
             param = {};
         }
 
-        this.element  = new Element('fieldset', { 'class':'postit' }).inject(this.container);
+        this.element  = new Element('fieldset', { 'class':'postit', 'id': 'postit-' + this.getId() }).inject(this.container);
         var flip      = new Element('img', { 'class':'resize', 'src': '/images/boards/flip.gif'}).inject(this.element);
         var functions = new Element('div', { 'class':'postit-functions' }).inject(this.element);
         var content   = new Element('textarea', { 'class':'postit-content' }).inject(this.element);
@@ -66,7 +66,8 @@ var PostIt = new Class({
             var newfunc = func.clone();
             color_function_elements.adopt( newfunc );
 
-            newfunc.addEvent('click', function() {
+            newfunc.addEvent('mousedown', function(e) {
+                e.stop();
                 this.getParent('.postit').setStyles({
                     'background-color': this.getStyle('background-color'),
                     'border-color'    : this.getStyle('color'),
@@ -82,7 +83,7 @@ var PostIt = new Class({
         }
 
         // Da foco ao soltar o botao do mouse apos o postit ter sido clicado
-        this.element.addEvent('mouseup', function() {
+        this.element.addEvent('mousedown', function() {
             content.focus();
         });
 

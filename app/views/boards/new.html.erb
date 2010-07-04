@@ -19,7 +19,7 @@ document.addEvent('domready', function() {
   <div id="functions">
     <input type="button" value="novo"   title="criar postit"  onclick="postitManager.newPostIt()" />
     <input type="button" value="salvar" title="salvar"
-    onclick="postitManager.save('<%= url_for({:action => :create}) %>'); location.href = '<%= boards_path %>'" />
+    onclick="postitManager.save('<%= url_for({:action => :create}) %>')" />
 
     <input type="button" value="↙" title="desfazer" onclick="postitManager.undo()" />
     <input type="button" value="↗" title="refazer"  onclick="postitManager.redo()" />

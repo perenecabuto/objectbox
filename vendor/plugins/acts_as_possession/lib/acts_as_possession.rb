@@ -9,7 +9,7 @@ module ActsAsPossession
   module ClassMethods
     def acts_as_possession
       include InstanceMethods
-      has_one :owners_possessions, :as => :possession, :autosave => true
+      has_one :owners_possessions, :as => :possession, :autosave => true, :dependent => :destroy, :foreign_key => :possession_id
 
       alias_attribute :author, :owner
       before_create :associate_owner

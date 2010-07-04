@@ -18,7 +18,8 @@ class BoardsController < ApplicationController
     @board.background ||= 'glossymetal.jpg';
     r = save
     respond_to do|format|
-      format.json { render :json => { :ok => r != false } }
+      format.html { redirect_to edit_board_path(@board) }
+      format.json { render :json => { :ok => r != false, :id => @board.id } }
     end
   end
 
@@ -44,7 +45,7 @@ class BoardsController < ApplicationController
 
   def build_board
     @board ||= Board.new
-    #@board.attributes = params[:board]
+    @board.attributes = params[:board]
   end
 
   def load_board
@@ -52,17 +53,17 @@ class BoardsController < ApplicationController
   end
 
   def save
-    @board.postits.each do |p|
-      unless params[:board][:postits_attributes].any? {|item| !item.has_key? :id or item[:id].to_i == p.id}
-        p.destroy
-      end
-    end
-
-    if @board.update_attributes params[:board]
+    if @board.save
       flash[:notice] = 'Salvo com sucesso'
     else
       render :action => :new
       return false
+    end
+
+    @board.postits.each do |p|
+      unless params[:board][:postits_attributes].any? {|item| !item.has_key? :id or item[:id].to_i == p.id}
+        p.destroy
+      end
     end
   end
 

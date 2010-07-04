@@ -39,6 +39,10 @@
   padding          : 10px;
 }
 
+.postit textarea.postit-content:focus {
+    background: rgba(0, 0, 0, 0.1);
+}
+
 .postit div.postit-functions {
   font-weight   : bold;
   padding       : 10px;

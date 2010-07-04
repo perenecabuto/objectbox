@@ -19,7 +19,8 @@ document.addEvent('domready', function() {
   <% form_for @board do |f| %>
   <div id="functions">
     <input type="button" value="novo"   title="criar postit"  onclick="postitManager.newPostIt()" />
-    <input type="button" value="salvar" title="salvar" onclick="postitManager.save('<%= url_for({:action => :update}) %>')" />
+    <input type="button" value="salvar" title="salvar"
+    onclick="postitManager.save('<%= url_for({:action => :update}) %>')" />
 
     <input type="button" value="↙" title="desfazer" onclick="postitManager.undo()" />
     <input type="button" value="↗" title="refazer"  onclick="postitManager.redo()" />
