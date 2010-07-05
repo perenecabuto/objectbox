@@ -48,7 +48,4 @@ Rails::Initializer.run do |config|
   #config.i18n.default_locale = :pt_BR
 end
 
-ActionController::Base.asset_host = Proc.new { |source|
-  "http://localhost:3000"
-}
 

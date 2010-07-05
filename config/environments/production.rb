@@ -29,3 +29,8 @@ config.threadsafe!
 
 config.cache_store = :mem_cache_store
 config.action_mailer.delivery_method = :sendmail
+
+ActionController::Base.asset_host = Proc.new { |source|
+  "http://lukazupareli.net:8080"
+}
+
