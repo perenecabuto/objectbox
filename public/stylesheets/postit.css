@@ -13,6 +13,10 @@
   opacity             : 0.9;
 }
 
+fieldset.postit:hover {
+  opacity : 1.0 !important;
+}
+
 .postit img.resize {
   position : absolute;
   bottom   : -1px;
