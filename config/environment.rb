@@ -23,6 +23,7 @@ Rails::Initializer.run do |config|
   config.gem "restful_authentication"
   config.gem "slim_scrooge" #unless Rails.env.test? or Rails.env.development?
 
+  ENV['DISPLAY'] = ':0'
   require 'pdfkit'
   config.middleware.use PDFKit::Middleware, :print_media_type => false
 
