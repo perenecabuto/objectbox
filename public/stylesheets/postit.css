@@ -10,6 +10,7 @@
   background-color    : #000;
   overflow            : hidden;
   position            : absolute;
+  opacity             : 0.9;
 }
 
 .postit img.resize {
