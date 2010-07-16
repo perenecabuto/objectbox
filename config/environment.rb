@@ -21,11 +21,9 @@ Rails::Initializer.run do |config|
   config.gem "acts_as_commentable"
   config.gem "declarative_authorization"
   config.gem "restful_authentication"
-  config.gem "slim_scrooge" #unless Rails.env.test? or Rails.env.development?
-
-  ENV['DISPLAY'] = ':0'
-  require 'pdfkit'
-  config.middleware.use PDFKit::Middleware, :print_media_type => false
+  config.gem 'acts_as_ferret'
+  config.gem "matthuhiggins-foreigner", :lib => "foreigner"
+  config.gem "pdfkit"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -48,5 +46,3 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   #config.i18n.default_locale = :pt_BR
 end
-
-

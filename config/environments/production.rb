@@ -26,6 +26,7 @@ config.cache_store = :mem_cache_store
 
 # Enable threaded mode
 config.threadsafe!
+config.gem "slim_scrooge"
 
 config.cache_store = :mem_cache_store
 config.action_mailer.delivery_method = :sendmail
@@ -33,4 +34,10 @@ config.action_mailer.delivery_method = :sendmail
 ActionController::Base.asset_host = Proc.new { |source|
   "http://lukazupareli.net:8080"
 }
+
+ENV['INDEXES'] = 'shared'
+ENV['DISPLAY'] = ':0'
+
+require 'pdfkit'
+config.middleware.use PDFKit::Middleware, :print_media_type => false
 
