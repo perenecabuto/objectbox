@@ -38,6 +38,9 @@ ActionController::Base.asset_host = Proc.new { |source|
 ENV['INDEXES'] = 'shared'
 ENV['DISPLAY'] = ':0'
 
-require 'pdfkit'
-config.middleware.use PDFKit::Middleware, :print_media_type => false
+begin
+  require 'pdfkit'
+  config.middleware.use PDFKit::Middleware, :print_media_type => false
+rescue
+end
 
