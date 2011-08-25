@@ -9,7 +9,7 @@
     </p>
     <p>
       <%= f.label :difficult %>
-      <%= f.select :difficult, CookingRecipe.difficulties.enum_with_index.collect { |d, i| [d, i] } %>
+      <%= f.select :difficult, CookingRecipe.difficulties.each_with_index.collect { |d, i| [d, i] } %>
     </p>
     <p>
       <%= f.label :howto_prepare %><br/>

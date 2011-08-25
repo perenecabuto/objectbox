@@ -12826,3 +12826,614 @@ Started GET "/boards/5/edit" for 127.0.0.1 at 2011-08-24 23:56:32 -0300
   [1m[36mOwnersPossessions Load (5.3ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".possession_id = 5 AND "owners_possessions".possession_type = 'Board') ORDER BY updated_at DESC, created_at DESC LIMIT 1[0m
 Rendered boards/edit.html.erb within layouts/application (108.8ms)
 Completed 200 OK in 228ms (Views: 114.9ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/boards/5?authenticity_token=Hh%2BYfNrUYERIZakLmqGlTtFE9%2FavxVlsJALmv%2FFSxOc%3D" for 127.0.0.1 at 2011-08-24 23:57:18 -0300
+  Processing by BoardsController#update as JSON
+  Parameters: {"title"=>"sabao", "elements"=>{"0"=>{"id"=>"43", "title"=>"Urso", "content"=>"", "x"=>"396", "y"=>"112", "width"=>"356px", "height"=>"177px", "background_color"=>"#484848", "color"=>"white"}, "1"=>{"id"=>"42", "title"=>"04 de July de 2010 19:51:45", "content"=>"", "x"=>"757", "y"=>"142", "width"=>"256px", "height"=>"144px", "background_color"=>"#ffff66", "color"=>"black"}, "2"=>{"id"=>"40", "title"=>"04 de July de 2010 19:51:45", "content"=>"", "x"=>"570", "y"=>"367", "width"=>"256px", "height"=>"144px", "background_color"=>"#484848", "color"=>"white"}, "3"=>{"id"=>"39", "title"=>"04 de July de 2010 19:49:38", "content"=>"", "x"=>"778", "y"=>"205", "width"=>"276px", "height"=>"204px", "background_color"=>"#ffff66", "color"=>"black"}, "4"=>{"id"=>"38", "title"=>"04 de July de 2010 19:49:18", "content"=>"Ovo de codorna", "x"=>"52", "y"=>"62", "width"=>"628px", "height"=>"349px", "background_color"=>"#484848", "color"=>"white"}}, "background"=>{"image"=>"url(http://localhost:3000/images/boards/background.jpg?1277167746)", "repeat"=>"repeat-x"}, "_rev"=>"5", "authenticity_token"=>"Hh+YfNrUYERIZakLmqGlTtFE9/avxVlsJALmv/FSxOc=", "method"=>:post, "id"=>"5"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mBoard Load (0.4ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1
+  [1m[36mPostit Load (0.8ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" IN (43, 42, 40, 39, 38) AND ("postits".board_id = 5)[0m
+{"board":{"background":{"image":"url(http://localhost:3000/images/boards/background.jpg?1277167746)","repeat":"repeat-x"},"created_at":"2010-07-04T19:49:19-03:00","id":5,"title":"sabao","updated_at":"2010-07-04T19:49:19-03:00"}}
+  [1m[35mAREL (0.4ms)[0m  UPDATE "boards" SET "background" = '--- !map:ActiveSupport::HashWithIndifferentAccess 
+image: url(http://localhost:3000/images/boards/background.jpg?1277167746)
+repeat: repeat-x
+' WHERE "boards"."id" = 5
+  [1m[36mPostit Load (0.7ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE ("postits".board_id = 5)[0m
+  [1m[35mOwnersPossessions Load (0.6ms)[0m  SELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".possession_id = 5 AND "owners_possessions".possession_type = 'Board') ORDER BY updated_at DESC, created_at DESC LIMIT 1
+Completed 200 OK in 427ms (Views: 13.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/boards/5?authenticity_token=Hh%2BYfNrUYERIZakLmqGlTtFE9%2FavxVlsJALmv%2FFSxOc%3D" for 127.0.0.1 at 2011-08-24 23:57:19 -0300
+  Processing by BoardsController#show as HTML
+  Parameters: {"authenticity_token"=>"Hh+YfNrUYERIZakLmqGlTtFE9/avxVlsJALmv/FSxOc=", "id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mBoard Load (1.7ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1
+Redirected to http://localhost:3000/boards/5/edit
+Completed 302 Found in 61ms
+
+
+Started GET "/boards/5/edit" for 127.0.0.1 at 2011-08-24 23:57:19 -0300
+  Processing by BoardsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mBoard Load (0.4ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1[0m
+  [1m[35mPostit Load (0.7ms)[0m  SELECT "postits".* FROM "postits" WHERE ("postits".board_id = 5)
+  [1m[36mOwnersPossessions Load (0.6ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".possession_id = 5 AND "owners_possessions".possession_type = 'Board') ORDER BY updated_at DESC, created_at DESC LIMIT 1[0m
+Rendered boards/edit.html.erb within layouts/application (116.9ms)
+Completed 200 OK in 241ms (Views: 128.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/object_collection" for 127.0.0.1 at 2011-08-24 23:57:22 -0300
+  Processing by ObjectCollectionController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mOwnersPossessions Load (1.5ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".owner_id = 1 AND "owners_possessions".owner_type = 'User') ORDER BY updated_at DESC, created_at DESC[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 6 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 4 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 3 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 2 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 1 LIMIT 1[0m
+  [1m[35mSimpletext Load (0.7ms)[0m  SELECT "simpletexts".* FROM "simpletexts" WHERE "simpletexts"."id" = 5 LIMIT 1
+  [1m[36mCookingRecipe Load (0.3ms)[0m  [1mSELECT "cooking_recipes".* FROM "cooking_recipes" WHERE "cooking_recipes"."id" = 6 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 43 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 42 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 40 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 39 LIMIT 1[0m
+  [1m[35mBoard Load (0.3ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 38 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 37 LIMIT 1
+  [1m[36mBoard Load (0.3ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."id" = 4 LIMIT 1[0m
+  [1m[35mBoard Load (0.3ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 3 LIMIT 1
+Rendered object_collection/index.html.erb within layouts/application (253.9ms)
+Completed 200 OK in 445ms (Views: 258.8ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/alerts/5" for 127.0.0.1 at 2011-08-24 23:57:25 -0300
+  Processing by AlertsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1[0m
+  [1m[35mOwnersPossessions Load (0.6ms)[0m  SELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".possession_id = 5 AND "owners_possessions".possession_type = 'Alert') ORDER BY updated_at DESC, created_at DESC LIMIT 1
+Rendered alerts/show.html.erb within layouts/application (171.0ms)
+Completed 200 OK in 235ms (Views: 182.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/alerts/5/edit" for 127.0.0.1 at 2011-08-24 23:57:31 -0300
+  Processing by AlertsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1[0m
+  [1m[35mOwnersPossessions Load (0.6ms)[0m  SELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".possession_id = 5 AND "owners_possessions".possession_type = 'Alert') ORDER BY updated_at DESC, created_at DESC LIMIT 1
+Rendered alerts/edit.html.erb within layouts/application (198.6ms)
+Completed 200 OK in 264ms (Views: 209.3ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/alerts/5" for 127.0.0.1 at 2011-08-24 23:57:47 -0300
+  Processing by AlertsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hh+YfNrUYERIZakLmqGlTtFE9/avxVlsJALmv/FSxOc=", "alert"=>{"content"=>"Pintar a porta", "alert_date(1i)"=>"2011", "alert_date(2i)"=>"10", "alert_date(3i)"=>"6"}, "commit"=>"Update", "id"=>"5"}
+  [1m[36mUser Load (4.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlert Load (0.4ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE "alerts" SET "content" = 'Pintar a porta', "alert_date" = '2011-10-06', "updated_at" = '2011-08-25 02:57:47.559959' WHERE "alerts"."id" = 5
+  [1m[36mOwnersPossessions Load (0.6ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".possession_id = 5 AND "owners_possessions".possession_type = 'Alert') ORDER BY updated_at DESC, created_at DESC LIMIT 1[0m
+Redirected to http://localhost:3000/alerts/5
+Completed 302 Found in 388ms
+
+
+Started GET "/alerts/5" for 127.0.0.1 at 2011-08-24 23:57:47 -0300
+  Processing by AlertsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1
+  [1m[36mOwnersPossessions Load (0.6ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".possession_id = 5 AND "owners_possessions".possession_type = 'Alert') ORDER BY updated_at DESC, created_at DESC LIMIT 1[0m
+Rendered alerts/show.html.erb within layouts/application (49.2ms)
+Completed 200 OK in 189ms (Views: 60.1ms | ActiveRecord: 7.6ms)
+
+
+Started POST "/alerts/5" for 127.0.0.1 at 2011-08-24 23:57:48 -0300
+  Processing by AlertsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hh+YfNrUYERIZakLmqGlTtFE9/avxVlsJALmv/FSxOc=", "alert"=>{"content"=>"Pintar a porta", "alert_date(1i)"=>"2011", "alert_date(2i)"=>"10", "alert_date(3i)"=>"6"}, "commit"=>"Update", "id"=>"5"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1
+  [1m[36mOwnersPossessions Load (0.6ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".possession_id = 5 AND "owners_possessions".possession_type = 'Alert') ORDER BY updated_at DESC, created_at DESC LIMIT 1[0m
+Redirected to http://localhost:3000/alerts/5
+Completed 302 Found in 93ms
+
+
+Started GET "/alerts/5" for 127.0.0.1 at 2011-08-24 23:57:48 -0300
+  Processing by AlertsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1
+  [1m[36mOwnersPossessions Load (0.6ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".possession_id = 5 AND "owners_possessions".possession_type = 'Alert') ORDER BY updated_at DESC, created_at DESC LIMIT 1[0m
+Rendered alerts/show.html.erb within layouts/application (110.2ms)
+Completed 200 OK in 178ms (Views: 121.3ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/object_collection" for 127.0.0.1 at 2011-08-24 23:57:52 -0300
+  Processing by ObjectCollectionController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mOwnersPossessions Load (1.5ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".owner_id = 1 AND "owners_possessions".owner_type = 'User') ORDER BY updated_at DESC, created_at DESC[0m
+  [1m[35mAlert Load (0.4ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 6 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 4 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 3 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 2 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 1 LIMIT 1[0m
+  [1m[35mSimpletext Load (0.7ms)[0m  SELECT "simpletexts".* FROM "simpletexts" WHERE "simpletexts"."id" = 5 LIMIT 1
+  [1m[36mCookingRecipe Load (0.3ms)[0m  [1mSELECT "cooking_recipes".* FROM "cooking_recipes" WHERE "cooking_recipes"."id" = 6 LIMIT 1[0m
+  [1m[35mPostit Load (0.5ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 43 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 42 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 40 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 39 LIMIT 1[0m
+  [1m[35mBoard Load (0.3ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 38 LIMIT 1[0m
+  [1m[35mPostit Load (0.5ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 37 LIMIT 1
+  [1m[36mBoard Load (0.3ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."id" = 4 LIMIT 1[0m
+  [1m[35mBoard Load (0.3ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 3 LIMIT 1
+Rendered object_collection/index.html.erb within layouts/application (265.2ms)
+Completed 200 OK in 458ms (Views: 269.8ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/cooking_ingredients" for 127.0.0.1 at 2011-08-25 00:04:24 -0300
+  Processing by CookingIngredientsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCookingIngredient Load (0.7ms)[0m  SELECT "cooking_ingredients".* FROM "cooking_ingredients"
+Rendered shared/_title.html.erb (2.8ms)
+Rendered cooking_ingredients/index.html.erb within layouts/application (44.6ms)
+Completed 200 OK in 113ms (Views: 56.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/simpletexts" for 127.0.0.1 at 2011-08-25 00:04:34 -0300
+  Processing by SimpletextsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSimpletext Load (0.6ms)[0m  SELECT "simpletexts".* FROM "simpletexts"
+Rendered shared/_title.html.erb (4.6ms)
+  [1m[36mOwnersPossessions Load (0.6ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".possession_id = 5 AND "owners_possessions".possession_type = 'Simpletext') ORDER BY updated_at DESC, created_at DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered simpletexts/index.html.erb within layouts/application (123.7ms)
+Completed 200 OK in 184ms (Views: 135.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/object_collection" for 127.0.0.1 at 2011-08-25 00:09:47 -0300
+  Processing by ObjectCollectionController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mOwnersPossessions Load (1.5ms)[0m  SELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".owner_id = 1 AND "owners_possessions".owner_type = 'User') ORDER BY updated_at DESC, created_at DESC
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 6 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 4 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 3 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 2 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 1 LIMIT 1
+  [1m[36mSimpletext Load (0.8ms)[0m  [1mSELECT "simpletexts".* FROM "simpletexts" WHERE "simpletexts"."id" = 5 LIMIT 1[0m
+  [1m[35mCookingRecipe Load (0.3ms)[0m  SELECT "cooking_recipes".* FROM "cooking_recipes" WHERE "cooking_recipes"."id" = 6 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 43 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 42 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 40 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 39 LIMIT 1
+  [1m[36mBoard Load (0.3ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 38 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 37 LIMIT 1[0m
+  [1m[35mBoard Load (0.3ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 4 LIMIT 1
+  [1m[36mBoard Load (0.3ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."id" = 3 LIMIT 1[0m
+Rendered object_collection/index.html.erb within layouts/application (255.7ms)
+Completed 200 OK in 448ms (Views: 260.4ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/object_collection" for 127.0.0.1 at 2011-08-25 00:09:48 -0300
+  Processing by ObjectCollectionController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mOwnersPossessions Load (1.4ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".owner_id = 1 AND "owners_possessions".owner_type = 'User') ORDER BY updated_at DESC, created_at DESC[0m
+  [1m[35mAlert Load (0.4ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 6 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 4 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 3 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 2 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 1 LIMIT 1[0m
+  [1m[35mSimpletext Load (0.7ms)[0m  SELECT "simpletexts".* FROM "simpletexts" WHERE "simpletexts"."id" = 5 LIMIT 1
+  [1m[36mCookingRecipe Load (0.3ms)[0m  [1mSELECT "cooking_recipes".* FROM "cooking_recipes" WHERE "cooking_recipes"."id" = 6 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 43 LIMIT 1
+  [1m[36mPostit Load (0.5ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 42 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 40 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 39 LIMIT 1[0m
+  [1m[35mBoard Load (0.3ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 38 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 37 LIMIT 1
+  [1m[36mBoard Load (0.3ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."id" = 4 LIMIT 1[0m
+  [1m[35mBoard Load (0.3ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 3 LIMIT 1
+Rendered object_collection/index.html.erb within layouts/application (262.2ms)
+Completed 200 OK in 460ms (Views: 267.3ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/boards" for 127.0.0.1 at 2011-08-25 00:09:53 -0300
+  Processing by BoardsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mBoard Load (0.4ms)[0m  SELECT "boards".* FROM "boards"
+Rendered boards/index.html.erb within layouts/application (83.5ms)
+Completed 200 OK in 146ms (Views: 94.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/boards/3" for 127.0.0.1 at 2011-08-25 00:09:56 -0300
+  Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mBoard Load (0.3ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 3 LIMIT 1
+Redirected to http://localhost:3000/boards/3/edit
+Completed 302 Found in 55ms
+
+
+Started GET "/boards/3/edit" for 127.0.0.1 at 2011-08-25 00:09:56 -0300
+  Processing by BoardsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mBoard Load (0.4ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."id" = 3 LIMIT 1[0m
+  [1m[35mPostit Load (0.6ms)[0m  SELECT "postits".* FROM "postits" WHERE ("postits".board_id = 3)
+  [1m[36mOwnersPossessions Load (0.6ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".possession_id = 3 AND "owners_possessions".possession_type = 'Board') ORDER BY updated_at DESC, created_at DESC LIMIT 1[0m
+Rendered boards/edit.html.erb within layouts/application (45.3ms)
+Completed 200 OK in 220ms (Views: 56.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/boards" for 127.0.0.1 at 2011-08-25 00:10:00 -0300
+  Processing by BoardsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mBoard Load (0.4ms)[0m  [1mSELECT "boards".* FROM "boards"[0m
+Rendered boards/index.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 150ms (Views: 37.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/object_collection" for 127.0.0.1 at 2011-08-25 00:10:01 -0300
+  Processing by ObjectCollectionController#index as HTML
+  [1m[35mUser Load (3.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mOwnersPossessions Load (1.4ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".owner_id = 1 AND "owners_possessions".owner_type = 'User') ORDER BY updated_at DESC, created_at DESC[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 6 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 4 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 3 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 2 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 1 LIMIT 1[0m
+  [1m[35mSimpletext Load (0.7ms)[0m  SELECT "simpletexts".* FROM "simpletexts" WHERE "simpletexts"."id" = 5 LIMIT 1
+  [1m[36mCookingRecipe Load (0.4ms)[0m  [1mSELECT "cooking_recipes".* FROM "cooking_recipes" WHERE "cooking_recipes"."id" = 6 LIMIT 1[0m
+  [1m[35mPostit Load (2.6ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 43 LIMIT 1
+  [1m[36mPostit Load (0.6ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 42 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 40 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 39 LIMIT 1[0m
+  [1m[35mBoard Load (0.3ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 38 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 37 LIMIT 1
+  [1m[36mBoard Load (0.3ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."id" = 4 LIMIT 1[0m
+  [1m[35mBoard Load (0.3ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 3 LIMIT 1
+Rendered object_collection/index.html.erb within layouts/application (338.2ms)
+Completed 200 OK in 535ms (Views: 340.3ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/cooking_recipes/6" for 127.0.0.1 at 2011-08-25 00:10:05 -0300
+  Processing by CookingRecipesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCookingRecipe Load (0.4ms)[0m  SELECT "cooking_recipes".* FROM "cooking_recipes" WHERE "cooking_recipes"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cooking_recipes".* FROM "cooking_recipes" WHERE "cooking_recipes"."id" = 6 LIMIT 1[0m
+Rendered cooking_recipes/show.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 166ms (Views: 38.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/cooking_recipes/6/edit" for 127.0.0.1 at 2011-08-25 00:10:10 -0300
+  Processing by CookingRecipesController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCookingRecipe Load (0.4ms)[0m  [1mSELECT "cooking_recipes".* FROM "cooking_recipes" WHERE "cooking_recipes"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "cooking_recipes".* FROM "cooking_recipes" WHERE "cooking_recipes"."id" = 6 LIMIT 1
+Rendered cooking_recipes/edit.html.erb within layouts/application (20.5ms)
+Completed 500 Internal Server Error in 154ms
+
+ActionView::Template::Error (undefined method `enum_with_index' for ["easy", "normal", "difficult", "complex"]:Array):
+    9:     </p>
+    10:     <p>
+    11:       <%= f.label :difficult %>
+    12:       <%= f.select :difficult, CookingRecipe.difficulties.enum_with_index.collect { |d, i| [d, i] } %>
+    13:     </p>
+    14:     <p>
+    15:       <%= f.label :howto_prepare %><br/>
+  app/views/cooking_recipes/edit.html.erb:12:in `block in _app_views_cooking_recipes_edit_html_erb___820684095_98909610_305387597'
+  actionpack (3.0.10) lib/action_view/helpers/capture_helper.rb:40:in `block in capture'
+  actionpack (3.0.10) lib/action_view/helpers/capture_helper.rb:172:in `with_output_buffer'
+  actionpack (3.0.10) lib/action_view/helpers/capture_helper.rb:40:in `capture'
+  actionpack (3.0.10) lib/action_view/helpers/form_helper.rb:545:in `fields_for'
+  actionpack (3.0.10) lib/action_view/helpers/form_helper.rb:320:in `form_for'
+  app/views/cooking_recipes/edit.html.erb:3:in `_app_views_cooking_recipes_edit_html_erb___820684095_98909610_305387597'
+  actionpack (3.0.10) lib/action_view/template.rb:135:in `block in render'
+  activesupport (3.0.10) lib/active_support/notifications.rb:54:in `instrument'
+  actionpack (3.0.10) lib/action_view/template.rb:127:in `render'
+  actionpack (3.0.10) lib/action_view/render/rendering.rb:59:in `block in _render_template'
+  activesupport (3.0.10) lib/active_support/notifications.rb:52:in `block in instrument'
+  activesupport (3.0.10) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.10) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.10) lib/action_view/render/rendering.rb:56:in `_render_template'
+  actionpack (3.0.10) lib/action_view/render/rendering.rb:26:in `render'
+  actionpack (3.0.10) lib/abstract_controller/rendering.rb:115:in `_render_template'
+  actionpack (3.0.10) lib/abstract_controller/rendering.rb:109:in `render_to_body'
+  actionpack (3.0.10) lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+  actionpack (3.0.10) lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+  actionpack (3.0.10) lib/abstract_controller/rendering.rb:102:in `render_to_string'
+  actionpack (3.0.10) lib/abstract_controller/rendering.rb:93:in `render'
+  actionpack (3.0.10) lib/action_controller/metal/rendering.rb:17:in `render'
+  actionpack (3.0.10) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.0.10) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+  activesupport (3.0.10) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.0.10) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.0.10) lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+  activerecord (3.0.10) lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+  actionpack (3.0.10) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.0.10) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.0.10) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.0.10) lib/abstract_controller/base.rb:150:in `process_action'
+  actionpack (3.0.10) lib/action_controller/metal/rendering.rb:11:in `process_action'
+  actionpack (3.0.10) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.0.10) lib/active_support/callbacks.rb:451:in `_run__877914558__process_action__100368955__callbacks'
+  activesupport (3.0.10) lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+  activesupport (3.0.10) lib/active_support/callbacks.rb:94:in `run_callbacks'
+  actionpack (3.0.10) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.0.10) lib/action_controller/metal/rescue.rb:17:in `process_action'
+  actionpack (3.0.10) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.0.10) lib/active_support/notifications.rb:52:in `block in instrument'
+  activesupport (3.0.10) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.10) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.10) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.0.10) lib/abstract_controller/base.rb:119:in `process'
+  actionpack (3.0.10) lib/abstract_controller/rendering.rb:41:in `process'
+  actionpack (3.0.10) lib/action_controller/metal.rb:138:in `dispatch'
+  actionpack (3.0.10) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.0.10) lib/action_controller/metal.rb:178:in `block in action'
+  actionpack (3.0.10) lib/action_dispatch/routing/route_set.rb:62:in `call'
+  actionpack (3.0.10) lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+  actionpack (3.0.10) lib/action_dispatch/routing/route_set.rb:27:in `call'
+  rack-mount (0.6.14) lib/rack/mount/route_set.rb:148:in `block in call'
+  rack-mount (0.6.14) lib/rack/mount/code_generation.rb:93:in `block in recognize'
+  rack-mount (0.6.14) lib/rack/mount/code_generation.rb:103:in `optimized_each'
+  rack-mount (0.6.14) lib/rack/mount/code_generation.rb:92:in `recognize'
+  rack-mount (0.6.14) lib/rack/mount/route_set.rb:139:in `call'
+  actionpack (3.0.10) lib/action_dispatch/routing/route_set.rb:493:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/head.rb:14:in `call'
+  rack (1.2.3) lib/rack/methodoverride.rb:24:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/flash.rb:182:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/cookies.rb:302:in `call'
+  activerecord (3.0.10) lib/active_record/query_cache.rb:32:in `block in call'
+  activerecord (3.0.10) lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+  activerecord (3.0.10) lib/active_record/query_cache.rb:12:in `cache'
+  activerecord (3.0.10) lib/active_record/query_cache.rb:31:in `call'
+  activerecord (3.0.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+  activesupport (3.0.10) lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+  actionpack (3.0.10) lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+  rack (1.2.3) lib/rack/sendfile.rb:107:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+  railties (3.0.10) lib/rails/rack/logger.rb:13:in `call'
+  rack (1.2.3) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.0.10) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.2.3) lib/rack/lock.rb:11:in `block in call'
+  <internal:prelude>:10:in `synchronize'
+  rack (1.2.3) lib/rack/lock.rb:11:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/static.rb:30:in `call'
+  railties (3.0.10) lib/rails/application.rb:168:in `call'
+  railties (3.0.10) lib/rails/application.rb:77:in `method_missing'
+  railties (3.0.10) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.2.3) lib/rack/content_length.rb:13:in `call'
+  rack (1.2.3) lib/rack/handler/webrick.rb:52:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered /var/lib/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.3ms)
+Rendered /var/lib/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.4ms)
+Rendered /var/lib/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.5ms)
+
+
+Started GET "/cooking_recipes/6/edit" for 127.0.0.1 at 2011-08-25 00:12:19 -0300
+  Processing by CookingRecipesController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCookingRecipe Load (0.4ms)[0m  SELECT "cooking_recipes".* FROM "cooking_recipes" WHERE "cooking_recipes"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cooking_recipes".* FROM "cooking_recipes" WHERE "cooking_recipes"."id" = 6 LIMIT 1[0m
+DEPRECATION WARNING: Having additional attributes on the join table of a has_and_belongs_to_many association is deprecated and will be removed in Rails 3.1. Please use a has_many :through association instead. (called from block in _app_views_cooking_recipes_edit_html_erb___820684095_96516640_305387597 at /home/bacamarte/workspace/new_objectbox/app/views/cooking_recipes/edit.html.erb:32)
+  [1m[35mCookingIngredient Load (0.4ms)[0m  SELECT * FROM "cooking_ingredients" INNER JOIN "cooking_recipes_ingredients" ON "cooking_ingredients".id = "cooking_recipes_ingredients".cooking_ingredients_id WHERE ("cooking_recipes_ingredients".cooking_recipes_id = 6 )
+Rendered cooking_recipes/edit.html.erb within layouts/application (57.4ms)
+Completed 200 OK in 208ms (Views: 69.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/cooking_recipes/6/cooking_ingredients/new" for 127.0.0.1 at 2011-08-25 00:12:25 -0300
+  Processing by CookingIngredientsController#new as HTML
+  Parameters: {"cooking_recipe_id"=>"6"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCookingRecipe Load (0.4ms)[0m  SELECT "cooking_recipes".* FROM "cooking_recipes" WHERE "cooking_recipes"."id" = 6 LIMIT 1
+DEPRECATION WARNING: Having additional attributes on the join table of a has_and_belongs_to_many association is deprecated and will be removed in Rails 3.1. Please use a has_many :through association instead. (called from associate_recipe at /home/bacamarte/workspace/new_objectbox/app/controllers/cooking_ingredients_controller.rb:105)
+Rendered cooking_ingredients/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 189ms (Views: 30.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/object_collection" for 127.0.0.1 at 2011-08-25 00:12:37 -0300
+  Processing by ObjectCollectionController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mOwnersPossessions Load (1.5ms)[0m  SELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".owner_id = 1 AND "owners_possessions".owner_type = 'User') ORDER BY updated_at DESC, created_at DESC
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 6 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 4 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 3 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 2 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 1 LIMIT 1
+  [1m[36mSimpletext Load (0.7ms)[0m  [1mSELECT "simpletexts".* FROM "simpletexts" WHERE "simpletexts"."id" = 5 LIMIT 1[0m
+  [1m[35mCookingRecipe Load (0.3ms)[0m  SELECT "cooking_recipes".* FROM "cooking_recipes" WHERE "cooking_recipes"."id" = 6 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 43 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 42 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 40 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 39 LIMIT 1
+  [1m[36mBoard Load (0.3ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 38 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 37 LIMIT 1[0m
+  [1m[35mBoard Load (0.3ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 4 LIMIT 1
+  [1m[36mBoard Load (0.3ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."id" = 3 LIMIT 1[0m
+Rendered object_collection/index.html.erb within layouts/application (316.9ms)
+Completed 200 OK in 510ms (Views: 321.9ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-08-25 00:12:52 -0300
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered shared/_title.html.erb (2.4ms)
+Rendered users/index.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 68ms (Views: 27.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-08-25 00:12:56 -0300
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mOwnersPossessions Load (1.4ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".owner_id = 1 AND "owners_possessions".owner_type = 'User') ORDER BY updated_at DESC, created_at DESC[0m
+Rendered users/show.html.erb within layouts/application (47.3ms)
+Completed 200 OK in 99ms (Views: 57.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-08-25 00:12:59 -0300
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered shared/_title.html.erb (2.4ms)
+Rendered users/index.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 67ms (Views: 27.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/object_collection" for 127.0.0.1 at 2011-08-25 00:13:00 -0300
+  Processing by ObjectCollectionController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mOwnersPossessions Load (1.3ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".owner_id = 1 AND "owners_possessions".owner_type = 'User') ORDER BY updated_at DESC, created_at DESC[0m
+  [1m[35mAlert Load (3.6ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 6 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 5 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 4 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 3 LIMIT 1[0m
+  [1m[35mAlert Load (0.3ms)[0m  SELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 2 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE "alerts"."id" = 1 LIMIT 1[0m
+  [1m[35mSimpletext Load (0.8ms)[0m  SELECT "simpletexts".* FROM "simpletexts" WHERE "simpletexts"."id" = 5 LIMIT 1
+  [1m[36mCookingRecipe Load (0.4ms)[0m  [1mSELECT "cooking_recipes".* FROM "cooking_recipes" WHERE "cooking_recipes"."id" = 6 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 43 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 42 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 40 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 39 LIMIT 1[0m
+  [1m[35mBoard Load (0.4ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1
+  [1m[36mPostit Load (0.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" = 38 LIMIT 1[0m
+  [1m[35mPostit Load (0.4ms)[0m  SELECT "postits".* FROM "postits" WHERE "postits"."id" = 37 LIMIT 1
+  [1m[36mBoard Load (0.3ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."id" = 4 LIMIT 1[0m
+  [1m[35mBoard Load (0.3ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 3 LIMIT 1
+Rendered object_collection/index.html.erb within layouts/application (261.1ms)
+Completed 200 OK in 452ms (Views: 262.6ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2011-08-25 00:14:32 -0300
+  Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mBoard Load (0.4ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1
+Redirected to http://localhost:3000/boards/5/edit
+Completed 302 Found in 125ms
+
+
+Started GET "/boards/5/edit" for 127.0.0.1 at 2011-08-25 00:14:33 -0300
+  Processing by BoardsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (4.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mBoard Load (0.4ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1[0m
+  [1m[35mPostit Load (0.7ms)[0m  SELECT "postits".* FROM "postits" WHERE ("postits".board_id = 5)
+  [1m[36mOwnersPossessions Load (0.6ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".possession_id = 5 AND "owners_possessions".possession_type = 'Board') ORDER BY updated_at DESC, created_at DESC LIMIT 1[0m
+Rendered boards/edit.html.erb within layouts/application (44.4ms)
+Completed 200 OK in 222ms (Views: 55.1ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/boards/5?authenticity_token=Hh%2BYfNrUYERIZakLmqGlTtFE9%2FavxVlsJALmv%2FFSxOc%3D" for 127.0.0.1 at 2011-08-25 00:14:44 -0300
+  Processing by BoardsController#update as JSON
+  Parameters: {"title"=>"sabao", "elements"=>{"0"=>{"id"=>"43", "title"=>"Urso", "content"=>"", "x"=>"396", "y"=>"112", "width"=>"356px", "height"=>"177px", "background_color"=>"#484848", "color"=>"white"}, "1"=>{"id"=>"42", "title"=>"04 de July de 2010 19:51:45", "content"=>"", "x"=>"757", "y"=>"142", "width"=>"256px", "height"=>"144px", "background_color"=>"#ffff66", "color"=>"black"}, "2"=>{"id"=>"40", "title"=>"04 de July de 2010 19:51:45", "content"=>"", "x"=>"570", "y"=>"367", "width"=>"256px", "height"=>"144px", "background_color"=>"#484848", "color"=>"white"}, "3"=>{"id"=>"39", "title"=>"04 de July de 2010 19:49:38", "content"=>"", "x"=>"778", "y"=>"205", "width"=>"276px", "height"=>"204px", "background_color"=>"#ffff66", "color"=>"black"}, "4"=>{"id"=>"38", "title"=>"04 de July de 2010 19:49:18", "content"=>"Ovo de codorna", "x"=>"52", "y"=>"62", "width"=>"628px", "height"=>"349px", "background_color"=>"#484848", "color"=>"white"}}, "background"=>{"image"=>"url(http://localhost:3000/images/boards/background.jpg?1286405636)", "repeat"=>"repeat-x"}, "_rev"=>"5", "authenticity_token"=>"Hh+YfNrUYERIZakLmqGlTtFE9/avxVlsJALmv/FSxOc=", "method"=>:post, "id"=>"5"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mBoard Load (0.3ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1
+  [1m[36mPostit Load (5.4ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" IN (43, 42, 40, 39, 38) AND ("postits".board_id = 5)[0m
+{"board":{"background":{"image":"url(http://localhost:3000/images/boards/background.jpg?1286405636)","repeat":"repeat-x"},"created_at":"2010-07-04T19:49:19-03:00","id":5,"title":"sabao","updated_at":"2010-07-04T19:49:19-03:00"}}
+  [1m[35mAREL (0.4ms)[0m  UPDATE "boards" SET "background" = '--- !map:ActiveSupport::HashWithIndifferentAccess 
+image: url(http://localhost:3000/images/boards/background.jpg?1286405636)
+repeat: repeat-x
+', "updated_at" = '2011-08-25 03:14:44.771695' WHERE "boards"."id" = 5
+  [1m[36mPostit Load (0.7ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE ("postits".board_id = 5)[0m
+  [1m[35mOwnersPossessions Load (0.6ms)[0m  SELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".possession_id = 5 AND "owners_possessions".possession_type = 'Board') ORDER BY updated_at DESC, created_at DESC LIMIT 1
+Completed 200 OK in 426ms (Views: 13.9ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/boards/5?authenticity_token=Hh%2BYfNrUYERIZakLmqGlTtFE9%2FavxVlsJALmv%2FFSxOc%3D" for 127.0.0.1 at 2011-08-25 00:14:45 -0300
+  Processing by BoardsController#show as HTML
+  Parameters: {"authenticity_token"=>"Hh+YfNrUYERIZakLmqGlTtFE9/avxVlsJALmv/FSxOc=", "id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mBoard Load (0.4ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1
+Redirected to http://localhost:3000/boards/5/edit
+Completed 302 Found in 118ms
+
+
+Started GET "/boards/5/edit" for 127.0.0.1 at 2011-08-25 00:14:45 -0300
+  Processing by BoardsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (4.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mBoard Load (0.3ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1[0m
+  [1m[35mPostit Load (0.7ms)[0m  SELECT "postits".* FROM "postits" WHERE ("postits".board_id = 5)
+  [1m[36mOwnersPossessions Load (0.6ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".possession_id = 5 AND "owners_possessions".possession_type = 'Board') ORDER BY updated_at DESC, created_at DESC LIMIT 1[0m
+Rendered boards/edit.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 221ms (Views: 54.7ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/boards/5?authenticity_token=Hh%2BYfNrUYERIZakLmqGlTtFE9%2FavxVlsJALmv%2FFSxOc%3D" for 127.0.0.1 at 2011-08-25 00:14:57 -0300
+  Processing by BoardsController#update as JSON
+  Parameters: {"title"=>"sabao", "elements"=>{"0"=>{"id"=>"43", "title"=>"Urso", "content"=>"", "x"=>"396", "y"=>"112", "width"=>"356px", "height"=>"177px", "background_color"=>"#484848", "color"=>"white"}, "1"=>{"id"=>"42", "title"=>"04 de July de 2010 19:51:45", "content"=>"", "x"=>"757", "y"=>"142", "width"=>"256px", "height"=>"144px", "background_color"=>"#ffff66", "color"=>"black"}, "2"=>{"id"=>"40", "title"=>"04 de July de 2010 19:51:45", "content"=>"", "x"=>"570", "y"=>"367", "width"=>"256px", "height"=>"144px", "background_color"=>"#484848", "color"=>"white"}, "3"=>{"id"=>"39", "title"=>"04 de July de 2010 19:49:38", "content"=>"", "x"=>"778", "y"=>"205", "width"=>"276px", "height"=>"204px", "background_color"=>"#ffff66", "color"=>"black"}, "4"=>{"id"=>"38", "title"=>"04 de July de 2010 19:49:18", "content"=>"Ovo de codorna", "x"=>"52", "y"=>"62", "width"=>"628px", "height"=>"349px", "background_color"=>"#484848", "color"=>"white"}}, "background"=>{"image"=>"url(http://localhost:3000/images/boards/glossymetal.jpg?1286405636)", "repeat"=>"repeat"}, "_rev"=>"5", "authenticity_token"=>"Hh+YfNrUYERIZakLmqGlTtFE9/avxVlsJALmv/FSxOc=", "method"=>:post, "id"=>"5"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mBoard Load (0.3ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1
+  [1m[36mPostit Load (5.0ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE "postits"."id" IN (43, 42, 40, 39, 38) AND ("postits".board_id = 5)[0m
+{"board":{"background":{"image":"url(http://localhost:3000/images/boards/glossymetal.jpg?1286405636)","repeat":"repeat"},"created_at":"2010-07-04T19:49:19-03:00","id":5,"title":"sabao","updated_at":"2011-08-25T00:14:44-03:00"}}
+  [1m[35mAREL (0.4ms)[0m  UPDATE "boards" SET "background" = '--- !map:ActiveSupport::HashWithIndifferentAccess 
+image: url(http://localhost:3000/images/boards/glossymetal.jpg?1286405636)
+repeat: repeat
+', "updated_at" = '2011-08-25 03:14:58.181488' WHERE "boards"."id" = 5
+  [1m[36mPostit Load (0.7ms)[0m  [1mSELECT "postits".* FROM "postits" WHERE ("postits".board_id = 5)[0m
+  [1m[35mOwnersPossessions Load (0.6ms)[0m  SELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".possession_id = 5 AND "owners_possessions".possession_type = 'Board') ORDER BY updated_at DESC, created_at DESC LIMIT 1
+Completed 200 OK in 709ms (Views: 13.8ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/boards/5?authenticity_token=Hh%2BYfNrUYERIZakLmqGlTtFE9%2FavxVlsJALmv%2FFSxOc%3D" for 127.0.0.1 at 2011-08-25 00:14:58 -0300
+  Processing by BoardsController#show as HTML
+  Parameters: {"authenticity_token"=>"Hh+YfNrUYERIZakLmqGlTtFE9/avxVlsJALmv/FSxOc=", "id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mBoard Load (0.4ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1
+Redirected to http://localhost:3000/boards/5/edit
+Completed 302 Found in 120ms
+
+
+Started GET "/boards/5/edit" for 127.0.0.1 at 2011-08-25 00:14:58 -0300
+  Processing by BoardsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mBoard Load (0.3ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."id" = 5 LIMIT 1[0m
+  [1m[35mPostit Load (0.7ms)[0m  SELECT "postits".* FROM "postits" WHERE ("postits".board_id = 5)
+  [1m[36mOwnersPossessions Load (0.6ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".possession_id = 5 AND "owners_possessions".possession_type = 'Board') ORDER BY updated_at DESC, created_at DESC LIMIT 1[0m
+Rendered boards/edit.html.erb within layouts/application (44.5ms)
+Completed 200 OK in 222ms (Views: 55.2ms | ActiveRecord: 3.5ms)
