@@ -13437,3 +13437,5 @@ Started GET "/boards/5/edit" for 127.0.0.1 at 2011-08-25 00:14:58 -0300
   [1m[36mOwnersPossessions Load (0.6ms)[0m  [1mSELECT "owners_possessions".* FROM "owners_possessions" WHERE ("owners_possessions".possession_id = 5 AND "owners_possessions".possession_type = 'Board') ORDER BY updated_at DESC, created_at DESC LIMIT 1[0m
 Rendered boards/edit.html.erb within layouts/application (44.5ms)
 Completed 200 OK in 222ms (Views: 55.2ms | ActiveRecord: 3.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/bacamarte/workspace/new_objectbox/config/environment.rb:6)
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: /home/bacamarte/workspace/new_objectbox/vendor/plugins/restful-authentication/rails/init.rb. (called from <top (required)> at /home/bacamarte/workspace/new_objectbox/config/environment.rb:6)
