@@ -8,7 +8,7 @@ class CreateOwnersPossessions < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :owners_possessions, [:owner_id, :owner_type,:possession_id, :possession_type], :unique => true
+    add_index :owners_possessions, [:owner_id, :owner_type,:possession_id, :possession_type], :unique => true, :name => 'owner_possession_uk'
   end
 
   def self.down

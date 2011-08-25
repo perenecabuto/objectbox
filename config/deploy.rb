@@ -22,7 +22,7 @@ role :app, domain                   # This may be the same as your `Web` server
 role :db,  domain, :primary => true # This is where Rails migrations will run
 
 namespace :deploy do
-  task :start, :roles => :app, :depends => "gems:install" do
+  task :start, :roles => :app, :depends => "bundle:install" do
     run "cd #{current_release}; RAILS_ENV=production rake db:migrate"
     run "touch #{current_release}/tmp/restart.txt"
   end
@@ -31,7 +31,7 @@ namespace :deploy do
   end
 
   desc "Restart Application"
-  task :restart, :roles => :app, :depends => ["gems:install"] do
+  task :restart, :roles => :app, :depends => ["bundle:install"] do
     run "touch #{current_path}/tmp/restart.txt"
     run <<-COMMAND
       rm -f    #{current_path}/db/production.sqlite3;
@@ -44,11 +44,13 @@ namespace :deploy do
   end
 end
 
-namespace :gems do
+namespace :bundle do
   desc "Install gems"
   task :install, :roles => :app do
-    run "cd #{current_path} && sudo rake RAILS_ENV=production gems:install"
+    run "cd #{current_path} && sudo bundle install"
   end
+
+  after "deploy:finalize_update", "bundle:install"
 end
 
 namespace :log do

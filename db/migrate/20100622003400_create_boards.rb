@@ -4,7 +4,7 @@ class CreateBoards < ActiveRecord::Migration
     create_table :boards do |t|
       t.string :title, :limit => 128, :null => false
       t.string :background, :limit => 128, :null => false
-      t.numeric :revision
+      t.integer :revision
 
       t.timestamps
     end
