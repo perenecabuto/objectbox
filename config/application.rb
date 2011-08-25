@@ -12,6 +12,7 @@ module Objectbox
     config.filter_parameters = [:password]
     config.active_record.observers = [:user_observer]
     config.time_zone = 'Brasilia'
+    config.middleware.use PDFKit::Middleware
   end
 end
 
