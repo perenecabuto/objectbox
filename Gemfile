@@ -12,7 +12,7 @@ gem "acts_as_commentable"
 gem "declarative_authorization"
 #gem "restful_authentication"
 gem "foreigner"
-#gem "pdfkit"
+gem "pdfkit"
 
 # Use unicorn as the web server
 # gem 'unicorn'
