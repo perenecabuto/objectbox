@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Board < ActiveRecord::Base
   acts_as_possession
 

@@ -1,0 +1,13 @@
+<p>
+  <b>Content:</b>
+  <%=h @alert.content %>
+</p>
+
+<p>
+  <b>Alert date:</b>
+  <%=h @alert.alert_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_alert_path(@alert) %> |
+<%= link_to 'Back', alerts_path %>

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class OwnersPossessions < ActiveRecord::Base
   belongs_to :owner, :polymorphic => true
   belongs_to :possession, :polymorphic => true

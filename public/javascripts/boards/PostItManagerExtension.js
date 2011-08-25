@@ -60,12 +60,11 @@ PostItManager.implement({
         var _this = this;
 
         new Request.JSON({
-            headers   : { "Content-Type" : "application/json" },
             url       : url,
-            data      : json,
             onComplete: function( response ) {
                 if ( response.id ) { url += '/' + response.id }
                 if ( response ) { location.href = url }
+                console.log(response);
             }
         }).post(json);
 

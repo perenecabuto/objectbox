@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Postit < ActiveRecord::Base
   acts_as_possession
 

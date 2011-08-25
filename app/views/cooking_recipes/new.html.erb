@@ -1,0 +1,23 @@
+<%= render :partial => 'shared/title' %>
+
+<%= form_for(@cooking_recipe) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :difficult %>
+      <%= f.select :difficult, CookingRecipe.difficulties.enum_with_index.collect {|d,i| [d,i]} %>
+    </p>
+    <p>
+      <%= f.label :howto_prepare %><br/>
+      <%= f.text_area :howto_prepare %>
+    </p>
+    <p>
+      <%= f.submit 'Create' %>
+      <%= link_to 'Back', cooking_recipes_path %>
+    </p>
+<% end %>
+

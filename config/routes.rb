@@ -1,25 +1,32 @@
-ActionController::Routing::Routes.draw do |map|
-  map.resources :postits
-
-  map.resources :postits
-
-  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
-  map.login '/login', :controller => 'sessions', :action => 'new'
-  map.register '/register', :controller => 'users', :action => 'create'
-  map.signup '/signup', :controller => 'users', :action => 'new'
-  map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate'
-  map.myprofile '/myprofile', :controller => 'users', :action => 'myprofile'
-
-  map.resources :boards do |board|
-    board.resources :postits
+# -*- encoding : utf-8 -*-
+Objectbox::Application.routes.draw do
+  resources :alerts
+  resources :cooking_ingredients
+  resources :cooking_recipes do
+    resources :cooking_ingredients
   end
-  map.connect 'boards/:id', :controller => :boards, :action => :update, :method => :post
-  map.resources :users
-  map.resource :session
-  map.resources :simpletexts
 
-  map.root :controller => :object_collection
+  resources :simpletexts
+  resources :postits
+  resources :boards do
+    resources :postits
+  end
 
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  resources :users
+  resource :session
+
+  match 'boards/:id' => 'boards#update', :method => :post
+  match '/search' => 'search#index', :as => :search
+  match 'search/:q' => 'search#index'
+  match '/logout' => 'sessions#destroy', :as => :logout
+  match '/login' => 'sessions#new', :as => :login
+  match '/register' => 'users#create', :as => :register
+  match '/signup' => 'users#new', :as => :signup
+  match '/activate/:activation_code' => 'users#activate', :as => :activate
+  match '/myprofile' => 'users#myprofile', :as => :myprofile
+  match '/:controller(/:action(/:id))'
+
+  root :to => 'object_collection#index'
+
 end
+

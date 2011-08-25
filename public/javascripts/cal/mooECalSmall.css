@@ -1,0 +1,39 @@
+/*
+ * Mootools Events Calendar - 400px x 350px
+*/
+
+/* Calendar Header/Controls */
+.mooECal{margin:0; padding:0; width:400px; height:350px; border:1px solid #999; border-left:none; text-align:center; border-collapse:separate; font-family:Arial, Helvetica, sans-serif;}
+.mooECal li, .mooECal ul{list-style:none; display:inline; margin:0; padding:0;}
+.thControls, .ulControls{text-align:left;}
+.thControls{ border-bottom:1px solid #999; border-left:1px solid #999; height:25px;}
+.mooECal .liHeaderCal{font-size:0.8em; float:right; width:50%; text-align:center; margin-right:1%;} /* date range of current view */
+.aPrevCal,.aNextCal{text-decoration:none; font-size:1.2em;} /* left/right nav arrow */
+.mooECal .liNextCal{float:right;}
+.mooECal .liLoading{font-size:0.6em; color:#999; letter-spacing:0.1em; margin-left:1%;}/* "loading..." text */
+/* month, week, day view links*/
+.ulViewPicker li{float:right;}
+.aViewCal{text-decoration:none; font-size:10px; margin-right:0.6em; color:#999;} 
+.aViewCal:hover{text-decoration:underline;}
+/* mon, tues, wed ... row */
+.mooECal tr.dowRow th{border-left:1px solid #999; font-size:0.6em; text-align:center;}
+.mooECal tr.dowRow th li{float:left; width:14.2%;}
+
+
+/* Calendar Body */
+.monthWeek{overflow:hidden;}
+.weekWeek,.dayDay{height:85%;}
+.monthDay,.weekDay,.dayDay{border:1px solid #999; border-right:none; border-bottom:none; width:14%; text-align:left; vertical-align:top;}
+.mooECal td.dayDay{padding:2%;}
+.mooECal td.hover{background-color:#FFD;} /* color when hovering a day */
+.mooECal td.selected{background-color:#EEF;} /* color for the selected day */
+.mooECal td span{color:#333; font-size:0.6em;} /* day of the month (1-31) */
+.monthDay div{height:35px; overflow:hidden; cursor:default;}
+.mooECal td div div{font-size:10px; color:#009; height:12px; overflow:hidden; cursor:default;}
+.mooECal td a{font-size:10px; color:#009; text-decoration:underline;}
+.mooECal td div.fullEvent{height:auto; overflow:auto; font-size:14px; border-bottom:1px solid #DDD;}
+/* tips styling */
+.tip {color: #fff; z-index: 13000; background-color:#666; -moz-border-radius: 3px; -webkit-border-radius: 3px;}
+.tip-title {font-weight:bold; font-size: 11px; margin: 0; padding: 8px 8px 4px;}
+.tip-text {font-size:11px; padding: 4px 8px 8px;}
+.tip a{text-decoration:none; color:#FFF; font-size: 11px;}

@@ -1,7 +1,8 @@
-<h1>Object Types</h1>
+<h1>Object Types <%= link_to "search", search_path %>
+</h1>
 
 <% for model in @models %>
-  <%= link_to model.respond_to?(:icon) ? image_tag(model_icon(model)): model, model.new, :title => model %>
+  <%= link_to model.respond_to?(:icon) ? image_tag(model_icon(model), :size => '64x64') : model, model.new, :title => model %>
 <% end %>
 
 <br /><br />
@@ -13,7 +14,7 @@
 
 <% for possession in current_user.possessions %>
   <div class="possession" style="width : 100px; height: 120px; float: left; padding: 5px">
-  <%= link_to image_tag(model_icon(possession.class)), possession, :title => possession.class %>
+  <%= link_to image_tag(model_icon(possession.class), :size => '64x64'), possession, :title => possession.class %>
   <p style="font-size: 12px; font-family: monospace; font-style: italic"><%= possession.to_s %></p>
   </div>
 <% end %>

@@ -16,7 +16,7 @@
         <ol id="documents">
           <li id="new-document"> <strong><%= link_to 'Novo quadro', new_board_path %></strong> </li>
           <% for board in @boards %>
-          <li>
+          <li onclick="location.href = this.getElement('a').href">
             <strong><%= link_to board.title, board %></strong>
             <strong><%# board.author %></strong>
           </li>

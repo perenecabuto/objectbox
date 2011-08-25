@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag 'search' %>
+<%= javascript_include_tag 'search' %>
+
+<%= form_tag '', :method => 'get' do %>
+  <%= text_field_tag :q, @pattern,
+  :class => 'main-screen', :autocomplete => 'off' %>
+<% end %>
+
+<ul id="result" class="main-screen">
+<% for object in @objects %>
+  <li>
+  <%= link_to image_tag(object.class.icon), object %>
+  <span><%= object %></span>
+  </li>
+<% end %>
+</ul>
+
+<p id="result-background" class="main-screen">
+* Busca que combina indexador de objetos.<br />
+* As buscas sofrem refinamento cumulativo.
+</p>
+

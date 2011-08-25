@@ -15,7 +15,7 @@ document.addEvent('domready', function() {
 
 <div id="board">
   <!-- Botoes -->
-  <% form_for @board do |f| %>
+  <%= form_for @board do |f| %>
   <div id="functions">
     <input type="button" value="novo"   title="criar postit"  onclick="postitManager.newPostIt()" />
     <input type="button" value="salvar" title="salvar"

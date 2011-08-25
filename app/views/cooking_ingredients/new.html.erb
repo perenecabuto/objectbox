@@ -1,0 +1,21 @@
+<h1>New cooking_ingredient</h1>
+
+<%= form_for(@cooking_ingredient) do |f| %>
+  <%= f.error_messages %>
+
+  <%= hidden_field_tag :cooking_recipe_id, @cooking_recipe.id if @cooking_recipe %>
+
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :unit %><br />
+    <%= f.text_field :unit %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', cooking_ingredients_path %>

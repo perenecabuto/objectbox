@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   protected
@@ -11,7 +12,7 @@ module ApplicationHelper
       current_page?(c.second) ? %(<span class="current">#{c.first}</span>) : link_to(*c)
     end
 
-    "<li>#{crumbs_tags.join('</li><li>→</li><li>')}</li>"
+    raw "<li>#{crumbs_tags.join('</li><li>→</li><li>')}</li>"
   end
 
   def crumbs_text
@@ -32,8 +33,9 @@ module ApplicationHelper
   end
 
   def model_icon(model)
-    return model.icon if model.respond_to?(:icon) and !model.icon.nil?
-    return 'warning_64.png' unless model.nil?
+    _icon = 'warning_64.png'
+    _icon = model.icon if model and model.respond_to?(:icon) and !model.icon.nil?
+    _icon
   end
 
   def current_model_icon

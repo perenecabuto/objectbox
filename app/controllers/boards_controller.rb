@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class BoardsController < ApplicationController
   before_filter :load_board, :only => [:edit,:update]
   before_filter :json_to_postit, :only => [:create, :update]
@@ -53,25 +54,29 @@ class BoardsController < ApplicationController
   end
 
   def save
-    if @board.save
-      flash[:notice] = 'Salvo com sucesso'
-    else
-      render :action => :new
-      return false
+    logger.error @board.to_json
+
+    Board.transaction do
+      @board.save
+      @board.postits.each do |p|
+        unless params[:board][:postits_attributes].any? {|item| !item.has_key? :id or item[:id].to_i == p.id}
+          p.destroy
+        end
+      end
     end
 
-    @board.postits.each do |p|
-      unless params[:board][:postits_attributes].any? {|item| !item.has_key? :id or item[:id].to_i == p.id}
-        p.destroy
-      end
+    if @board.errors.empty?
+      flash[:notice] = 'Salvo com sucesso'
+    else
+      flash[:error] = "Erro: #{@board.errors.full_messages}"
+      return false
     end
   end
 
   def json_to_postit
     params[:board] ||= {}
-    params[:board][:title] = params.delete(:title)
-    params[:board][:background] = params.delete(:background)
-    params[:board][:postits_attributes] = params.delete(:elements).values unless params[:elements].nil?
-    params[:board][:postits_attributes] ||= []
+    params[:board][:title] = params[:title]
+    params[:board][:background] = params[:background]
+    params[:board][:postits_attributes] = params[:elements].values rescue []
   end
 end

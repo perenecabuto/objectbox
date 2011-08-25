@@ -1,23 +1,27 @@
 body {
   background-color: #E3E4FA;
-  font-family: georgia,Verdana;
+  font-family: georgia, sans, serif;
   text-shadow: 2px 2px 3px rgba(135, 145, 135, 0.65);
   line-height: 1em;
-  width: 100%;
-  height: 100%;
 }
 
 h1 {
   color: #777;
   border-bottom: 1px solid #acc;
   margin-bottom: 20px;
-  font-family:georgia,serif;
-  /*font-size:410%;*/
+  font-family: georgia,serif;
   font-size:30px;
   font-variant:normal;
   font-weight:bold;
-  letter-spacing:-1px;
+  letter-spacing:0px;
   line-height:normal;
+}
+
+h1 img {
+  padding: 0;
+  margin: 0;
+  margin-right: 10px;
+  float: left;
 }
 
 /* TODO definir estilo para h2 para melhorar a página inicial */
@@ -74,15 +78,17 @@ table a {
 
 
 #topo {
-  font-family: Arial, Verdana;
+  font-family: Arial, Verdana, sans-serif;
   font-size: 13px;
   font-weight: bold;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 35px;
+  height: 25px;
   padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 0px;
   background-image: url(../images/top-bg.png);
 }
 
@@ -91,10 +97,8 @@ table a {
 }
 
 #topo li {
-  display: inline-block;
+  display: inline;
   height: auto;
-  margin-top: 10px;
-  margin-right: 5px;
   color: white;
 }
 
@@ -148,7 +152,7 @@ h1 .toggle:hover {
   border: none;
   float:left;
   width: 90%;
-  margin: 0px;
+  margin: 0;
 }
 
 #page-slice .slice-search {
@@ -159,9 +163,9 @@ h1 .toggle:hover {
 
 #page-slice input.do-search {
   border:none;
-  padding: 0px;
+  padding: 0;
   padding-left: 2px;
-  margin: 0px;
+  margin: 0;
   margin-top: 5px;
 }
 
@@ -197,15 +201,15 @@ h1 .toggle:hover {
 }
 
 #content {
-  font-family: sans;
-  margin-top: 60px;
+  font-family: sans, sans-serif;
+  margin-top: 40px;
   margin-left: 30px;
   width: 80%;
 }
 
 /* user icon */
 .user-icon {
-  position: absolute;
+  position: fixed;
   padding: 3px;
   top: 4px;
   left: 4px;
@@ -220,6 +224,9 @@ h1 .toggle:hover {
   margin-bottom: 5px;
   height: 20px;
   padding: 0px;
+  float:left;
+  width: 80%;
+  top: 50px;
 }
 
 .messages .error {
@@ -264,4 +271,5 @@ h1 .toggle:hover {
 @media print {
   table th {
     border: 1px solid #999;
+  }
 }

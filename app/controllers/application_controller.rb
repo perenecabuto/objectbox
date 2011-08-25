@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 
@@ -7,7 +8,6 @@ class ApplicationController < ActionController::Base
 
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-  filter_parameter_logging :password
 
   before_filter :login_required
   before_filter :set_current_user
@@ -20,11 +20,11 @@ class ApplicationController < ActionController::Base
   end
 
   def default_crumbs
-      root_route = ActionController::Routing::Routes.recognize_path('/')
+      root_route = Rails.application.routes.recognize_path('/')
       crumb_to 'Root', :controller => root_route[:controller]
 
       if controller_name != root_route[:controller]
-        crumb_to controller_name.capitalize, :controller => controller_name
+        crumb_to controller_name.camelize.singularize, :controller => controller_name
       end
 
       if params.has_key?:id

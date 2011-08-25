@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class UsersController < ApplicationController
   skip_filter :login_required, :only => [:new, :create, :activate]
 

@@ -1,0 +1,46 @@
+.main-screen {
+  display: block;
+  margin: auto auto;
+  width: 96%;
+}
+
+#q {
+  font-family: georgia;
+  padding: 10px;
+  font-size: 20px;
+  clear:both;
+}
+
+#q.active {
+  border-bottom: 1px solid #ddd;
+}
+
+ul#result {
+  list-style: none;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: 600px;
+  border-left: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  z-index: 2;
+}
+
+ul#result li {
+  font-family: georgia;
+  padding: 5px;
+  font-size: 14px;
+  border-bottom: 1px dashed #ddd;
+  min-height: 40px;
+  background-color: #fff;
+}
+
+#result-background {
+  padding: 100px;
+  width: 40%;
+  margin-top: 20px;
+  top: 100px;
+  background-color: #fff;
+  z-index: 0;
+}
+

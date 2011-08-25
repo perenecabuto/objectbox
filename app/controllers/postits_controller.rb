@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PostitsController < ApplicationController
   before_filter :load_postit, :only => [:show, :edit]
 

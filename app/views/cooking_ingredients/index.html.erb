@@ -1,0 +1,22 @@
+<%= render :partial => 'shared/title' %>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Unit</th>
+  </tr>
+
+<% @cooking_ingredients.each do |cooking_ingredient| %>
+  <tr>
+    <td><%=h cooking_ingredient.description %></td>
+    <td><%=h cooking_ingredient.unit %></td>
+    <td><%= link_to 'Show', cooking_ingredient %></td>
+    <td><%= link_to 'Edit', edit_cooking_ingredient_path(cooking_ingredient) %></td>
+    <td><%= link_to 'Destroy', cooking_ingredient, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New cooking_ingredient', new_cooking_ingredient_path %>

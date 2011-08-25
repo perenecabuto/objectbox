@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreatePostits < ActiveRecord::Migration
   def self.up
     create_table :postits do |t|

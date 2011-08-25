@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateOwnersPossessions < ActiveRecord::Migration
   def self.up
     create_table :owners_possessions, :id => true do |t|

@@ -21,7 +21,7 @@ window.addEvent('domready', function() {
 
 <h1>Autentique-se</h1>
 
-  <% form_tag session_path do -%>
+  <%= form_tag session_path do -%>
   <div class="login-box">
     <p><%= label_tag 'login' %><br />
     <%= text_field_tag 'login', @login %></p>

@@ -1,0 +1,20 @@
+<h1>Editing cooking_ingredient</h1>
+
+<%= form_for(@cooking_ingredient) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :unit %><br />
+    <%= f.text_field :unit %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @cooking_ingredient %> |
+<%= link_to 'Back', cooking_ingredients_path %>

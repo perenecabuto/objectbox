@@ -1,0 +1,13 @@
+<p>
+  <b>Description:</b>
+  <%=h @cooking_ingredient.description %>
+</p>
+
+<p>
+  <b>Unit:</b>
+  <%=h @cooking_ingredient.unit %>
+</p>
+
+
+<%= link_to 'Edit', edit_cooking_ingredient_path(@cooking_ingredient) %> |
+<%= link_to 'Back', cooking_ingredients_path %>

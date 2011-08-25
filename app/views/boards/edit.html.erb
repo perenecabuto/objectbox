@@ -10,17 +10,17 @@
 <script type="text/javascript">
 document.addEvent('domready', function() {
   postitManager.setDocumentName('<%=h @board.title.to_s %>');
-  postitManager.restore(<%= @json %>);
+  postitManager.restore(JSON.decode('<%= raw @json %>'));
   postitManager.makeAllEditable(true);
 });
 </script>
 
 <div id="board">
-  <% form_for @board do |f| %>
+  <%= form_for @board do |f| %>
   <div id="functions">
     <input type="button" value="novo"   title="criar postit"  onclick="postitManager.newPostIt()" />
     <input type="button" value="salvar" title="salvar"
-    onclick="postitManager.save('<%= url_for({:action => :update}) %>')" />
+    onclick="postitManager.save('<%= url_for({:action => :update, :authenticity_token => form_authenticity_token}) %>')" />
 
     <input type="button" value="↙" title="desfazer" onclick="postitManager.undo()" />
     <input type="button" value="↗" title="refazer"  onclick="postitManager.redo()" />

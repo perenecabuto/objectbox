@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class SimpletextsController < ApplicationController
   before_filter :load_simpletext, :only => [:show, :edit, :destroy, :update]
 

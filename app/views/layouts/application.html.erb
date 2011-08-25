@@ -30,7 +30,7 @@
 
                 <li>
                   <%= link_to image_tag("pdf.gif") + " Exportar para PDF",
-                  request.request_uri == root_path ? params.merge({:action => "#{params[:action]}.pdf" }) :
+                  request.fullpath == root_path ? params.merge({:action => "#{params[:action]}.pdf" }) :
                     request.url.empty? ?
                     params.merge({:format => :pdf}) : request.url.gsub(%r{(.)/?(\?.*)?$},'\1.pdf\2')
                   %>
@@ -51,7 +51,7 @@
             <span class="toggle">esconder </span>
         </div>
 
-        <div class="messages" style="float:left; top: 50px; width: 100%">
+        <div class="messages">
             <p class="error"><%= flash[:error] %></p>
             <p class="notice"><%= flash[:notice] %></p>
         </div>

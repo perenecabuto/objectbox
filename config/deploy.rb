@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 set :application, "objectbox"
 
 set :repository,  "git://github.com/perenecabuto/objectbox.git"
@@ -47,5 +48,12 @@ namespace :gems do
   desc "Install gems"
   task :install, :roles => :app do
     run "cd #{current_path} && sudo rake RAILS_ENV=production gems:install"
+  end
+end
+
+namespace :log do
+  desc "Watch app log"
+  task :watch, :roles => :app do
+    run "tail -f #{current_path}/log/production.log"
   end
 end

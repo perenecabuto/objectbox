@@ -1,0 +1,30 @@
+<%= javascript_include_tag 'cal/mooECal' %>
+<%= stylesheet_link_tag 'cal/mooECal' %>
+<%= stylesheet_link_tag 'cal/mooECalSmall' %>
+<%= stylesheet_link_tag 'cal/mooECalLarge' %>
+
+<script type="text/javascript">
+window.addEvent('domready', function() {
+  new Calendar({calContainer:'calBody', scroller : false,
+    cEvents: [
+    <% @alerts.each do |alert| %>
+    {
+      title: '<%= link_to alert.content, alert %>',
+      start: '<%= alert.alert_date.strftime('%Y-%m-%d') %>',
+      end: '<%=h alert.alert_date.strftime('%Y-%m-%d') %>',
+      'location': ''
+    },
+    <% end %>
+    { start: ''}
+    ]
+  });
+});
+</script>
+
+<h1>
+  <%= image_tag current_model_icon, :size => '32x32' %> Alerts
+  <%= link_to 'New event', new_alert_path, :style => 'font-size: 12px' %>
+</h1>
+
+<div id="calBody"></div>
+

@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @cooking_recipe.name %>
+</p>
+
+<p>
+  <b>Howto prepare:</b>
+  <%=h @cooking_recipe.howto_prepare %>
+</p>
+
+<p>
+  <b>Dificult:</b>
+  <%=h @cooking_recipe.difficult %>
+</p>
+
+
+<%= link_to 'Edit', edit_cooking_recipe_path(@cooking_recipe) %> |
+<%= link_to 'Back', cooking_recipes_path %>

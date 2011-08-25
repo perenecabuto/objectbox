@@ -1,0 +1,23 @@
+<%= render :partial => 'shared/title' %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Dificuldade</th>
+  </tr>
+
+<% @cooking_recipes.each do |cooking_recipe| %>
+  <tr>
+    <td><%=h cooking_recipe.name %></td>
+    <td><%=h cooking_recipe.difficult %></td>
+    <td><%= link_to 'Show', cooking_recipe %></td>
+    <td><%= link_to 'Edit', edit_cooking_recipe_path(cooking_recipe) %></td>
+    <td><%= link_to 'Destroy', cooking_recipe, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nova receita', new_cooking_recipe_path %>
+<%= link_to 'Novo ingredient', new_cooking_ingredient_path %>

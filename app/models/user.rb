@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
@@ -54,7 +55,7 @@ class User < ActiveRecord::Base
   #
   def self.authenticate(login, password)
     return nil if login.blank? || password.blank?
-    u = find :first, :conditions => ['login = ? and activated_at IS NOT NULL', login] # need to get the salt
+    u = where(['login = ? and activated_at IS NOT NULL', login]).first
     u && u.authenticated?(password) ? u : nil
   end
 
