@@ -11,6 +11,8 @@ PostItManager.implement({
           param.container = this.container;
         }
 
+        param.flipImage = this.getFlipImage();
+
         var postit = new PostIt( param );
 
         var _manager = this;

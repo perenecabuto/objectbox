@@ -23,6 +23,10 @@ var PostIt = new Class({
             this.container = param.container;
         }
 
+        if ( param && param.flipImage ) {
+            this.flipImage = param.flipImage;
+        }
+
         this.buildVisualization( param );
         this.makeEditable( false );
     },

@@ -40,9 +40,9 @@ var PostItManager = new Class({
             param.container = this.container;
         }
 
-        var postit = new PostIt( param );
+        param.flipImage = this.getFlipImage();
 
-        postIt.setFlipImage(this.getFlipImage());
+        var postit = new PostIt( param );
 
         this.postitCollection.push( postit );
 
