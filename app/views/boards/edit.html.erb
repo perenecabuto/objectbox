@@ -9,7 +9,8 @@
 
 <script type="text/javascript">
 document.addEvent('domready', function() {
-  postitManager.setDocumentName('<%=h @board.title.to_s %>');
+  postitManager.setFlipImage("<%= image_path('flip.png') %>");
+  postitManager.setDocumentName('<%= @board.title %>');
   postitManager.restore(JSON.decode('<%= raw @json %>'));
   postitManager.makeAllEditable(true);
 });

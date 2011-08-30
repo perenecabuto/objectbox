@@ -1,5 +1,6 @@
 
 var PostIt = new Class({
+    flipImage: '/images/flip.png',
     element  : null,
     container: null,
     id       : null,
@@ -32,7 +33,7 @@ var PostIt = new Class({
         }
 
         this.element  = new Element('fieldset', { 'class':'postit', 'id': 'postit-' + this.getId() }).inject(this.container);
-        var flip      = new Element('img', { 'class':'resize', 'src': '/images/boards/flip.gif'}).inject(this.element);
+        var flip      = new Element('img', { 'class':'resize', 'src': this.getFlipImage()}).inject(this.element);
         var functions = new Element('div', { 'class':'postit-functions' }).inject(this.element);
         var content   = new Element('textarea', { 'class':'postit-content' }).inject(this.element);
 
@@ -108,6 +109,13 @@ var PostIt = new Class({
 
     getContent: function() {
         return this.getElement('.postit-content').get('value');
+    },
+
+    setFlipImage: function(value) {
+        this.flipImage = value;
+    },
+    getFlipImage: function() {
+        return this.flipImage;
     },
 
     getContainer: function() {

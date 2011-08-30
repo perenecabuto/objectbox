@@ -4,6 +4,7 @@ var PostItManager = new Class({
     container         : null,
     documentName      : null,
     revision          : null,
+    flipImage         : null,
     background        : document.body,
 
     initialize: function( param ) {
@@ -22,6 +23,14 @@ var PostItManager = new Class({
         }
     },
 
+    setFlipImage: function(path) {
+        this.flipImage = path;
+    },
+
+    getFlipImage: function() {
+        return this.flipImage;
+    },
+
     newPostIt: function( param ) {
         if ( $type(param) != 'object' ) {
             param = {};
@@ -32,6 +41,8 @@ var PostItManager = new Class({
         }
 
         var postit = new PostIt( param );
+
+        postIt.setFlipImage(this.getFlipImage());
 
         this.postitCollection.push( postit );
 

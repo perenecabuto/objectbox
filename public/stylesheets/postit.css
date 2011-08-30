@@ -39,9 +39,14 @@ fieldset.postit:hover {
   border           : none;
   color            : inherit;
   width            : 100%;
-  height           : 80%;
+  height           : 100%;
   margin           : auto auto;
   padding          : 10px;
+  resize           : none;
+  min-width        : inherit;
+  max-width        : inherit;
+  min-height       : inherit;
+  max-height       : inherit;
 }
 
 .postit textarea.postit-content:focus {
